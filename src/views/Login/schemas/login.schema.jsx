@@ -7,6 +7,6 @@ export const loginSchema = Yup.object({
     .required('Required'),
   password: Yup
     .string('Password err')
-    .min(8, 'Length invalid')
+    .min(8, 'Minimun of 8 digits')
     .required('Required')
 })
