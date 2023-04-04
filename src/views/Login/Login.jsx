@@ -5,7 +5,8 @@ import Input from "../../components/Input/Input";
 import AuthContext from "../../contexts/AuthContext";
 import { login as loginService } from "../../services/AuthService";
 import { setAccessToken } from "../../stores/AccessTokenStore";
-import { loginSchema } from "./schemas/login.schema";
+import { loginSchema } from "../../Schemas/LoginSchema";
+import Navbar from "../../components/Navbar/Navbar";
 
 const initialValues = {
     email: '',
@@ -39,6 +40,7 @@ export default function Login () {
 });
 return (
     <div>
+    <Navbar />
         <h1>Login</h1>
 
         <form onSubmit={handleSubmit}>
