@@ -1,18 +1,15 @@
-import React from "react";
-import { Link } from 'react-router-dom';
+import { useContext } from "react";
+import AuthContext from "../../contexts/AuthContext";
+import Navbar from "../../components/Navbar/Navbar";
 
-export default function Home() {
+const Home= () => {
+    const {currentUser} = useContext(AuthContext)
     return (
         <div>
-        <h1>Home</h1>
-        <div>
-            <Link to='/register'>
-                <button>Register</button>
-            </Link>
-            <Link to='/login'>
-                <button>Login</button>
-            </Link>
-        </div>
+            <Navbar />
+            <h1>Profile of {currentUser.firstName}</h1>
         </div>
     )
 }
+
+export default Home;

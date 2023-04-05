@@ -19,16 +19,23 @@ const Navbar = () => {
           <li className="nav-item">
           <NavLink
                 className={({ isActive }) => `nav-link ${isActive ? 'active': ''}`}
-                to="/register"
+                to="/profile"
               >
-                Register
+                Profile
               </NavLink>
               </li>
           <li className="nav-item">
           <NavLink
                 className={({ isActive }) => `nav-link ${isActive ? 'active': ''}`}
-                to="/login">
-                Login
+                to="/scrapbook">
+                Scrapbook
+              </NavLink>
+          </li>
+          <li className="nav-item">
+          <NavLink
+                className={({ isActive }) => `nav-link ${isActive ? 'active': ''}`}
+                to="/maps">
+                Maps
               </NavLink>
           </li>
         </ul>
