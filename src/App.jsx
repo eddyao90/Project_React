@@ -22,10 +22,10 @@ function App() {
           <Route path='/' element={<Start />} />
           <Route path="register" element={<Register />} />
           <Route path="login" element={<Login />} />
+          
           <Route path="home" element={
             <ProtectedRoute>
               <Home />
-
             </ProtectedRoute>
           } />
           <Route path="profile" element={
@@ -33,10 +33,26 @@ function App() {
           <Profile />
           </ProtectedRoute>
           } />
-          <Route path="scrapbook" element={<Scrapbook />} />
-          <Route path="maps" element={<Maps />} />
-          <Route path="photos" element={<Photos />} />
-          <Route path="edit-profile" element={<Edit />} />
+          <Route path="scrapbook" element={
+          <ProtectedRoute>
+          <Scrapbook />
+          </ProtectedRoute>
+          } />
+          <Route path="maps" element={
+          <ProtectedRoute>
+          <Maps />
+          </ProtectedRoute>
+          } />
+          <Route path="photos" element={
+          <ProtectedRoute>
+          <Photos />
+          </ProtectedRoute>
+          } />
+          <Route path="edit-profile" element={
+          <ProtectedRoute>
+          <Edit />
+          </ProtectedRoute>
+          } />
         </Routes>
 
     </div>
