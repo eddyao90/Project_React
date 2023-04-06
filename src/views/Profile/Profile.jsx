@@ -2,10 +2,9 @@ import { useContext } from "react";
 import AuthContext from "../../contexts/AuthContext";
 import Navbar from "../../components/Navbar/Navbar";
 import { Link, NavLink } from 'react-router-dom';
-import './Home.css';
+import './Profile.css'
 
-
-const Home= () => {
+const Profile= () => {
     const {currentUser} = useContext(AuthContext)
     return (
     <>
@@ -16,21 +15,13 @@ const Home= () => {
                     <div className="img-profile">
                     </div>
                     <div className="info-bio">
-                        <h3>{currentUser.firstName}</h3>
+                        <h3>Profile</h3>
 
                         <p>Traveler</p>
                     </div>
 
                     <div className="social-media">
-                        <div className="edit-profile-sidebar">
-                        <NavLink
-                        className={({ isActive }) => `nav-link ${isActive ? 'active': ''}`}
-                        to="/edit-profile"
-                        >
-                        Edit profile
-                        </NavLink>
-                        </div>
-
+           
                         <div className="scrapbook-sidebar">
                         <NavLink
                         className={({ isActive }) => `nav-link ${isActive ? 'active': ''}`}
@@ -54,10 +45,7 @@ const Home= () => {
 
                 <div className="main-middle">
                     <section className="welcome">
-                        <h2>Welcome, {currentUser.firstName}</h2>
-
-                        <p><span>Today´s inspiration:</span> Api result</p>
-
+                        <h2>{currentUser.firstName} {currentUser.lastName}</h2>
                         <div className="count-infos">
                             <div className="photos-home">
                                 <p>Photos</p>
@@ -196,9 +184,7 @@ const Home= () => {
             </main>
         </div>
     </>
-
-
     )
 }
 
-export default Home;
+export default Profile;

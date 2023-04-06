@@ -7,6 +7,11 @@ import Login from './views/Login/Login'
 import Home from './views/Home/Home'
 import Register from './views/Register/Register'
 import Start from './views/Start/Start'
+import Profile from './views/Profile/Profile'
+import Scrapbook from './views/Scrapbook/Scrapbook'
+import Maps from './views/Maps/Maps'
+import Photos from './views/Photos/Photos'
+import Edit from './views/Edit/Edit'
 
 
 function App() {
@@ -20,8 +25,18 @@ function App() {
           <Route path="home" element={
             <ProtectedRoute>
               <Home />
+
             </ProtectedRoute>
           } />
+          <Route path="profile" element={
+          <ProtectedRoute>
+          <Profile />
+          </ProtectedRoute>
+          } />
+          <Route path="scrapbook" element={<Scrapbook />} />
+          <Route path="maps" element={<Maps />} />
+          <Route path="photos" element={<Photos />} />
+          <Route path="edit-profile" element={<Edit />} />
         </Routes>
 
     </div>
