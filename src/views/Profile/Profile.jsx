@@ -95,59 +95,8 @@ const Profile= () => {
                     <div className="main-middle">
                         <h2>Upcoming trips: </h2>
                     </div>
-                </div>
 
-                <aside className="aside-friends-community">
-                    <div className="friends-community">
-                        <section className="friends">
-                            <div className="info-friends">
-                                <h2>Friends (30)</h2>
-                            </div>
-
-                            <div className="list-friends">
-                                <ul className="list-column">
-                                    <li>
-
-                                        <p>Eddy</p>
-
-                                    </li>
-
-                                    <li>
-
-
-                                        <p>Mandi</p>
-
-                                    </li>
-
-                                    <li>
-
-                                        <p>Ninita</p>
-
-                                    </li>
-
-                                    <li>
-
-                                        <p>Viole</p>
-
-                                    </li>
-
-                                    <li>
-
-                                        <p>Maru</p>
-
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <a href="#">
-                                <h4>See all</h4>
-                            </a>
-
-                        </section>
-
-                        <section className="communities">
-                            <div className="info-communities">
-                                <h2>Communities (3)</h2>
+                    </section>
                             </div>
 
                             <div className="list-communities">
