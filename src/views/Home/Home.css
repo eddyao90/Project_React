@@ -134,7 +134,7 @@
     align-items: center;
     border: none;
     border-radius: 3.4rem;
-    background: var(--input-search) url(../assets/home/magnifying-glass.svg)
+    background: var(--input-search) url()
       no-repeat scroll 0.8rem 0.9rem;
     padding-left: 30px;
     padding: 1rem 3rem;

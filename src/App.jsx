@@ -1,4 +1,9 @@
-import { useContext } from 'react'
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+
+import { getPosts } from './actions/posts';
+
+
 import { Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
@@ -12,9 +17,18 @@ import Scrapbook from './views/Scrapbook/Scrapbook'
 import Maps from './views/Maps/Maps'
 import Photos from './views/Photos/Photos'
 import Edit from './views/Edit/Edit'
+import ErrorPage from './views/ErrorPage/ErrorPage'
 
 
-function App() {
+const App = () => {
+  const [currentId, setCurrentId] = useState(0);
+  const dispatch = useDispatch();
+
+
+  useEffect(() => {
+    dispatch(getPosts());
+  }, [currentId, dispatch]);
+
   return (
     <div className="App">
 
@@ -35,7 +49,7 @@ function App() {
           } />
           <Route path="scrapbook" element={
           <ProtectedRoute>
-          <Scrapbook />
+          <Scrapbook setCurrentId={setCurrentId}/>
           </ProtectedRoute>
           } />
           <Route path="maps" element={
@@ -53,6 +67,7 @@ function App() {
           <Edit />
           </ProtectedRoute>
           } />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
 
     </div>

@@ -3,7 +3,7 @@ import AuthContext from "../../contexts/AuthContext";
 import Navbar from "../../components/Navbar/Navbar";
 import { Link, NavLink } from 'react-router-dom';
 import './Scrapbook.css';
-
+import Form from "../../components/Form/Form"
 const Scrapbook= () => {
     const {currentUser} = useContext(AuthContext)
     return (
@@ -55,20 +55,8 @@ const Scrapbook= () => {
                     <div className="main-middle">
                         <section className="welcome">
                             <h2>Scrapbook</h2>
-                            <div className="count-infos">
-                            <form action="/community" method="POST" enctype="multipart/form-data">
-                            <textarea className="form-control {{#if errors.body}}is-invalid{{/if}}" id="body" rows="3" placeholder="Today I ate so healthy that I want to share it" name="body" required>{}</textarea>
-                            <div className=" mar-top clearfix d-grid gap-1 d-md-flex justify-content-md-end">
-                            <label for="image-input"></label>
-                            <input type="file" name="image" id="image-input" className="form-control-file" style="display: none;visibility: none" value={values.firstName}
-             onChange={handleChange}
-             error={errors.firstName}
-           />
-                            <button className="btn-share" type="submit">Share</button>
-                            </div>
-                            </form>
-                            </div>
                         </section>
+                        <Form />
     
                     </div>
                 </main>

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function Start() {
     return (
         <div>
-        <h1>Start</h1>
+        <h1>Start Page</h1>
         <div>
             <Link to='/register'>
                 <button>Register</button>

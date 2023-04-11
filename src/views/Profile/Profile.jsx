@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import AuthContext from "../../contexts/AuthContext";
 import Navbar from "../../components/Navbar/Navbar";
+import Rightbar from "../../components/Rightbar/Rightbar";
 import { Link, NavLink } from 'react-router-dom';
 import './Profile.css'
 
@@ -91,45 +92,14 @@ const Profile= () => {
                             </div>
                         </div>
                     </section>
-
+                    <section className="welcome">
                     <div className="main-middle">
                         <h2>Upcoming trips: </h2>
                     </div>
 
                     </section>
-                            </div>
-
-                            <div className="list-communities">
-                                <ul className="list-column-communities">
-                                    <li>
-
-
-                                        <p>Robots</p>
-
-                                    </li>
-
-                                    <li>
-
-                                        <p>Smile always</p>
-
-                                    </li>
-
-                                    <li>
-
-
-                                        <p>Ironhackers</p>
-
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <a href="#">
-                                <h4>See all</h4>
-                            </a>
-
-                        </section>
-                    </div>
-                </aside>
+                </div>
+                <Rightbar />
             </main>
         </div>
     </>
