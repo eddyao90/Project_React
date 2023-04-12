@@ -9,8 +9,8 @@ import svgx from "@svgx/vite-plugin-react";
 export default defineConfig(async () => {
   return {
     plugins: [
-      svgx()
+      svgx(),
+      react()
     ],
-    plugins: [react()],
   };
 });
