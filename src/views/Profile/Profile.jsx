@@ -1,12 +1,28 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import AuthContext from "../../contexts/AuthContext";
 import Navbar from "../../components/Navbar/Navbar";
 import Rightbar from "../../components/Rightbar/Rightbar";
 import { Link, NavLink } from 'react-router-dom';
 import './Profile.css'
 
-const Profile= () => {
+
+
+export default function EditProfile(){
+
     const {currentUser} = useContext(AuthContext)
+    const getEditProfile = () => {
+        getProfileFromUser(current.id)
+        .then(response => setEditProfile(response))
+        .catch(err => console.log(err))
+    }
+    useEffect(() => {
+        if(currentUser) {
+            getEditProfile()
+        }
+    }, [currentUser])
+    const handleOnChange = (e) => {
+       
+    }
     return (
     <>
     <Navbar />
@@ -105,5 +121,3 @@ const Profile= () => {
     </>
     )
 }
-
-export default Profile;

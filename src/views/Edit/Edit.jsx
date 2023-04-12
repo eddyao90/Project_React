@@ -42,17 +42,18 @@ const Edit= () => {
                         </div>
     
                     </aside>
-    
+
+                    <form action="/profile" method="POST"> 
                     <div className="main-middle">
                         <section className="welcome">
                             <h2>Edit Profile</h2>
-                            <div className="count-infos">
+                            <div className="edit-profile">
 
                             </div>
                         </section>
     
                     </div>
-    
+                    </form>
                     
                 </main>
             </div>

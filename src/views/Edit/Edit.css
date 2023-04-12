@@ -16,7 +16,7 @@
     --input-search: #5579a1;
     --aside-line: ##ecf2fa;
     --text-bio-description: #999;
-    --text-count-infos: #5a5a5a;
+    --text-edit-profile: #5a5a5a;
   }
   
   body {
@@ -276,14 +276,14 @@
     font-weight: 700;
   }
   
-  .count-infos {
+  .edit-profile {
     display: flex;
     padding-top: 0rem;
     align-items: center;
     gap: 4rem;
   }
   
-  .count-infos .img {
+  .edit-profile .img {
     display: flex;
     align-items: center;
   }
@@ -298,7 +298,7 @@
   .cities-home p {
     font-size: 1.2rem;
     padding: 0.3rem 0 0.5rem 0;
-    color: var(--text-count-infos);
+    color: var(--text-edit-profile);
   }
   
   /* SECTION FRIENDS / COMMUNITIES */

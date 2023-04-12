@@ -4,6 +4,8 @@ import Navbar from "../../components/Navbar/Navbar";
 import { Link, NavLink } from 'react-router-dom';
 import './Scrapbook.css';
 import Form from "../../components/Form/Form"
+
+
 const Scrapbook= () => {
     const {currentUser} = useContext(AuthContext)
     return (

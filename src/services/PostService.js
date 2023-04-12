@@ -1,4 +1,9 @@
 import { createHttp } from './BaseService';
 
+
 const authenticatedHttp = createHttp(true);
-const unauthenticatedHttp = createHttp(false);
+
+
+export const fetchPosts = () => authenticatedHttp.get('/posts');
+export const createPost = (newPost) => authenticatedHttp.post('/posts', newPost);
+export const updatePost = (id, updatedPost) => authenticatedHttp.patch(`/posts/${id}`, updatedPost);
