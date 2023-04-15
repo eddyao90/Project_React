@@ -5,9 +5,9 @@ import FileBase from 'react-file-base64';
 import * as api from '../../services/PostService';
 import useStyles from './styles';
 
-const Form = ({ currentId }) => {
+const Form = ({ currentUser }) => {
   const [postData, setPostData] = useState({ creator: '', title: '', message: '', selectedFile: '' });
-  const post = useSelector((state) => (currentId ? state.posts.find((message) => message._id === currentId) : null));
+  const post = useSelector((state) => (currentUser ? state.posts.find((message) => message._id === currentUser) : null));
   const classes = useStyles();
   
 
@@ -25,7 +25,7 @@ const Form = ({ currentId }) => {
   return (
     <Paper className={classes.paper}>
       <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
-        <Typography variant="h6">{currentId ? `Editing "${post.title}"` : 'Leave a message'}</Typography>
+        <Typography variant="h6">{currentUser ? `Editing "${post.title}"` : 'Leave a message'}</Typography>
         <TextField name="title" variant="outlined" label="Title" fullWidth value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })} />
         <TextField name="message" variant="outlined" label="Message" fullWidth multiline minRows={4} value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })} />
         <div className={classes.fileInput}><FileBase type="file" multiple={false} onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })} /></div>

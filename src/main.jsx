@@ -7,6 +7,7 @@ import thunk from 'redux-thunk';
 import { reducers } from './reducers';
 import App from './App'
 import { AuthProvider } from './contexts/AuthContext'
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
 

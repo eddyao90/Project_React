@@ -1,0 +1,78 @@
+
+  .element.style {
+    width: 800px;
+    height: 800px;
+position:absolute;
+  }
+
+.card {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.place{
+  font-size: 14px;
+}
+
+label {
+color: blue;
+font-size: 14px;
+border-bottom: 1.5px solid black;
+margin: 3px 0;
+}
+
+.descr {
+  font-size: 14px;
+}
+
+.star {
+  color: red;
+}
+
+.info{
+display: flex;
+flex-direction:row;
+justify-content: space-around;
+color: gray;
+}
+
+form{
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+input,textarea{
+  border: none;
+  border-bottom: 1px solid gray;
+  outline: none;
+}
+
+input::placeholder,textarea::placeholder{
+  font-size: 13px;
+  color: gray;
+}
+
+.submitButton{
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: black;
+  background-color: green;
+
+}
+
+.submitButton:hover{
+  background-color: greenyellow;
+  cursor: pointer;
+}

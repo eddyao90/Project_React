@@ -10,6 +10,7 @@ import Navbar from "../../components/Navbar/Navbar";
 const INITIAL_VALUES = {
     firstName: "",
     lastName: "",
+    username: "",
     email: "",
     password: ""
 };
@@ -69,6 +70,17 @@ export default function Register() {
              value={values.lastName}
              onChange={handleChange}
              error={errors.lastName}
+           />
+           </FormControl>
+           <FormControl text='Username' error={touched.username && errors.username} htmlFor='username'>
+        <Input
+             label="Username"
+             placeholder="Username"
+             name="username"
+             id="username"
+             value={values.username}
+             onChange={handleChange}
+             error={errors.username}
            />
            </FormControl>
            <FormControl text='Email' error={touched.email && errors.email} htmlFor='email'>

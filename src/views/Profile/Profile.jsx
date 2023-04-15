@@ -7,22 +7,11 @@ import './Profile.css'
 
 
 
-export default function EditProfile(){
+export default function Profile(){
 
     const {currentUser} = useContext(AuthContext)
-    const getEditProfile = () => {
-        getProfileFromUser(current.id)
-        .then(response => setEditProfile(response))
-        .catch(err => console.log(err))
-    }
-    useEffect(() => {
-        if(currentUser) {
-            getEditProfile()
-        }
-    }, [currentUser])
-    const handleOnChange = (e) => {
+
        
-    }
     return (
     <>
     <Navbar />

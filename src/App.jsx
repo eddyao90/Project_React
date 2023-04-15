@@ -21,13 +21,13 @@ import ErrorPage from './views/ErrorPage/ErrorPage'
 
 
 const App = () => {
-  const [currentId, setCurrentId] = useState(0);
+  const [currentUser, setCurrentUser] = useState(0);
   const dispatch = useDispatch();
 
 
   useEffect(() => {
     dispatch(getPosts());
-  }, [currentId, dispatch]);
+  }, [currentUser, dispatch]);
 
   return (
     <div className="App">
@@ -49,7 +49,7 @@ const App = () => {
           } />
           <Route path="scrapbook" element={
           <ProtectedRoute>
-          <Scrapbook setCurrentId={setCurrentId}/>
+          <Scrapbook setCurrentUser={setCurrentUser}/>
           </ProtectedRoute>
           } />
           <Route path="maps" element={

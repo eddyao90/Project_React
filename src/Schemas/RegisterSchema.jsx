@@ -6,6 +6,8 @@ const RegisterSchema = Yup.object().shape({
     .required(ERRORS.ERROR_REQUIRED),
   lastName: Yup.string()
     .required(ERRORS.ERROR_REQUIRED),
+  username: Yup.string()
+    .required(ERRORS.ERROR_REQUIRED),
   email: Yup.string()
     .email(ERRORS.ERROR_VALID_EMAIL)
     .required(ERRORS.ERROR_REQUIRED),
