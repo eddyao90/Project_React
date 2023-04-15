@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Navbar from "../../components/Navbar/Navbar";
 import { Link, NavLink } from "react-router-dom";
 import "./Maps.css";
@@ -6,6 +7,38 @@ import Map from "../../components/Map/Map";
   
 const Maps = () => {
 
+=======
+import { useRef, useEffect, useContext, useState } from "react";
+import AuthContext from "../../contexts/AuthContext";
+import Navbar from "../../components/Navbar/Navbar";
+import { Link, NavLink } from "react-router-dom";
+import "./Maps.css";
+import Map from "react-map-gl";
+import * as mapboxgl from "mapbox-gl";
+
+mapboxgl.accessToken =
+  "pk.eyJ1IjoiZGluaG95YW8iLCJhIjoiY2xnZG1uYmRrMG1seDNzcDh4dDVyOXd5MyJ9.uQ3UqASFaekdVQtPZHMfYA";
+
+const Maps = () => {
+  const { currentUser } = useContext(AuthContext);
+
+  const mapContainer = useRef(null);
+  const map = useRef(null);
+  const [lng, setLng] = useState(40.41);
+  const [lat, setLat] = useState(-3.70);
+  const [zoom, setZoom] = useState(2);
+
+  useEffect(() => {
+    if (map.current) return; // initialize map only once
+    map.current = new mapboxgl.Map({
+      container: mapContainer.current,
+      style: "mapbox://styles/mapbox/streets-v12",
+      center: [lng, lat],
+      zoom: zoom,
+    });
+  });
+
+>>>>>>> 4e0e3cc14856de93673d0f36a43d698dc737d7d5
   return (
     <>
       <Navbar />
@@ -48,7 +81,13 @@ const Maps = () => {
             <section className="welcome">
               <h2>Where have Y'all been?</h2>
               <div className="count-infos">
+<<<<<<< HEAD
                   <Map />
+=======
+                <div>
+                  <div ref={mapContainer} className="map-container" />
+                </div>
+>>>>>>> 4e0e3cc14856de93673d0f36a43d698dc737d7d5
               </div>
             </section>
           </div>
