@@ -1,6 +1,5 @@
 import { useContext, useEffect } from "react";
 import AuthContext from "../../contexts/AuthContext";
-import Navbar from "../../components/Navbar/Navbar";
 import Rightbar from "../../components/Rightbar/Rightbar";
 import { Link, NavLink } from 'react-router-dom';
 import './Profile.css'
@@ -14,7 +13,7 @@ export default function Profile(){
        
     return (
     <>
-    <Navbar />
+
         <div className="container-main">
             <main>
                 <aside className="aside-profile">

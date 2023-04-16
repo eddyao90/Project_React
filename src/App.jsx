@@ -7,7 +7,6 @@ import { getPosts } from './actions/posts';
 import { Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
-import AuthContext from './contexts/AuthContext'
 import Login from './views/Login/Login'
 import Home from './views/Home/Home'
 import Register from './views/Register/Register'
@@ -18,6 +17,7 @@ import Maps from './views/Maps/Maps'
 import Photos from './views/Photos/Photos'
 import Edit from './views/Edit/Edit'
 import ErrorPage from './views/ErrorPage/ErrorPage'
+import People from './views/People/People';
 
 
 const App = () => {
@@ -31,6 +31,7 @@ const App = () => {
 
   return (
     <div className="App">
+      <Navbar />
 
       <Routes>
           <Route path='/' element={<Start />} />
@@ -45,6 +46,11 @@ const App = () => {
           <Route path="profile" element={
           <ProtectedRoute>
           <Profile />
+          </ProtectedRoute>
+          } />
+          <Route path="people" element={
+          <ProtectedRoute>
+          <People setCurrentUser={setCurrentUser}/>
           </ProtectedRoute>
           } />
           <Route path="scrapbook" element={

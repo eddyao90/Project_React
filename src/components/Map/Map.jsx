@@ -7,7 +7,7 @@ import StarIcon from '@mui/icons-material/Star';
 import './Map.css'
 import {format} from "timeago.js";
 import AuthContext from "../../contexts/AuthContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 function Mapa() {
   const authenticatedHttp = createHttp(true)
@@ -25,8 +25,6 @@ function Mapa() {
     zoom : 14
   })
 
- 
-
   const handleAddClick = (e) => {
     let lat = e.lngLat.lat
     let long = e.lngLat.lng
@@ -41,7 +39,7 @@ function Mapa() {
     e.preventDefault()
 
     const newPin = {
-      username: currentUser,
+      user: currentUser.id,
       title: title,
       rating: rating,
       descr: descr,
@@ -116,7 +114,7 @@ function Mapa() {
               <LocationOnIcon 
                 className="icon"
                 onClick = {() => handleMarkerClicked(p._id,p.lat,p.long)}
-                style = {{fontSize: viewPort.zoom * 2, color : p.username === currentUser ? "red" : "orange"}}
+                style = {{fontSize: viewPort.zoom * 2, color : p?.user?.id === currentUser?.id ? "red" : "orange"}}
 
               />
             </Marker>
@@ -144,7 +142,7 @@ function Mapa() {
         <label>Information</label>
 
         <div className="info">
-          <span className="username">Created by:<b>{p.username}</b></span>
+          <span className="username">Created by:<b>{p.user.username}</b></span>
           <span className="date">{format(p.createdAt)}</span>
 
         </div>
