@@ -3,13 +3,15 @@ import { useNavigate } from "react-router-dom";
 import AuthContext from "../../contexts/AuthContext"
 import { editUser } from "../../services/UserService";
 
+const genderOptions = ['Female', 'Male', 'Prefer no to say'];
+
 
 export default function EditProfile() {
     const [image, setImage] = useState([]);
     const [user, setUser] = useState({
         firstName: "",
         lastName: "",
-        gender: "",
+        gender: "Prefer not to say",
         birthday: "",
         language: "",
         looking: "",
@@ -35,6 +37,7 @@ export default function EditProfile() {
 
 
     const handleOnChange = (e) => {
+        console.log(e.target.value)
         const { name, value, type, files } = e.target;
         if(type !== 'file') {
             setUser({ ...user, [name]: value });
@@ -59,7 +62,7 @@ export default function EditProfile() {
         
         editUser(formData)
         .then(response => {
-            navigate(`/profile`)
+            navigate(`/profile/${currentUser.id}`)
         })
         .catch(err => console.log(err))
     }
@@ -78,7 +81,13 @@ export default function EditProfile() {
                     <input name= 'lastName' value={user.lastName} type='text' onChange={handleOnChange} />
                 
                     <label>Gender:</label>
-                    <input name='gender' value={user.gender} type='text' onChange={handleOnChange} />
+                    <select name="gender" onChange={handleOnChange}>
+                        {
+                            genderOptions.map(option => (
+                                <option value={option}>{option}</option>
+                            ))
+                        }
+                    </select>
 
                     <label>Birthday:</label>
                     <input name= 'birthday' value={user.birthday} type='text' onChange={handleOnChange} />

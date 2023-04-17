@@ -1,15 +1,28 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import AuthContext from "../../contexts/AuthContext";
 import Follow from "../../components/Follow/Follow";
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useParams } from 'react-router-dom';
 import './Profile.css'
+import { getOneUser } from "../../services/UserService";
 
 
 
 export default function Profile(){
+    const [profile, setProfile] = useState(null);
+    const { id } = useParams(); 
+    const { currentUser } = useContext(AuthContext);
 
-    const {currentUser} = useContext(AuthContext)
-    console.log(currentUser)
+    useEffect(() => {
+        if(id) {
+            getOneUser(id)
+            .then(res => setProfile(res))
+            .catch(err => console.log(err))
+        }
+    }, [id])
+
+    useEffect(() => {
+        console.log(profile)
+    }, [profile])
        
     return (
     <>
@@ -53,7 +66,7 @@ export default function Profile(){
 
                 <div className="main-middle">
                     <section className="welcome">
-                        <h2>{currentUser.firstName} {currentUser.lastName}</h2>
+                        <h2>{profile?.firstName} {profile?.lastName}</h2>
                         <div className="count-infos">
                             <div className="photos-home">
                                 <p>Photos</p>
@@ -101,18 +114,21 @@ export default function Profile(){
                             
                         </div>
                         <div>
-                        <ul>
-                            <p>Gender: {currentUser.gender}</p>
-                            <p>Birthday: {currentUser.birthday}</p>
-                            <p>Languages: {currentUser.language}</p>
-                            <p>Looking for: {currentUser.looking}</p>
-                            <p>Travel type: {currentUser.travel}</p>
-                            <p>Activities: {currentUser.activities}</p>
-                            <p>Books: {currentUser.books}</p>
-                            <p>Music: {currentUser.music}</p>
-                            <p>Food: {currentUser.food}</p>
-                            <p>Top 3 countries: {currentUser.top3}</p>
-                        </ul>
+                        {
+                            profile &&
+                            <ul>
+                                <p>Gender: {profile.gender}</p>
+                                <p>Birthday: {profile.birthday}</p>
+                                <p>Languages: {profile.language}</p>
+                                <p>Looking for: {profile.looking}</p>
+                                <p>Travel type: {profile.travel}</p>
+                                <p>Activities: {profile.activities}</p>
+                                <p>Books: {profile.books}</p>
+                                <p>Music: {profile.music}</p>
+                                <p>Food: {profile.food}</p>
+                                <p>Top 3 countries: {profile.top3}</p>
+                            </ul>
+                        }
                         </div>
                     </section>
                     <section className="welcome">

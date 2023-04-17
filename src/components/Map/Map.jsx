@@ -70,8 +70,6 @@ function Mapa() {
 
   
   const handleMarkerClicked = (id,lat,long) => {
-    console.log(lat)
-    console.log(long)
     setCurrentPlaceId(id)
   }
 

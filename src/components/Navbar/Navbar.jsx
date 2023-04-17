@@ -44,7 +44,7 @@ const Navbar = () => {
               <li className="nav-item">
               <NavLink
                     className={({ isActive }) => `nav-link ${isActive ? 'active': ''}`}
-                    to="/profile"
+                    to={`/profile/${currentUser.id}`}
                   >
                     Profile
                   </NavLink>
