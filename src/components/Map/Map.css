@@ -76,3 +76,7 @@ input::placeholder,textarea::placeholder{
   background-color: greenyellow;
   cursor: pointer;
 }
+
+.mapboxgl-popup-close-button {
+  font-size: 47px;
+}

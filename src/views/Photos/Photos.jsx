@@ -6,7 +6,6 @@ const Photos= () => {
     const {currentUser} = useContext(AuthContext)
     return (
         <div>
-            <Navbar />
             <h1>Photos</h1>
         </div>
     )

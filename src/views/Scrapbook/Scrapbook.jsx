@@ -10,7 +10,6 @@ const Scrapbook= () => {
     const {currentUser} = useContext(AuthContext)
     return (
         <>
-        <Navbar />
             <div className="container-main">
                 <main>
                     <aside className="aside-profile">

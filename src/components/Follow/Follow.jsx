@@ -1,47 +1,23 @@
-import './Rightbar.css';
+import './Follow.css';
+import { useState } from 'react';
+import { followUser } from '../../services/FollowService';
 
-const Rightbar = () => {
-  
+const Follow = () => {
+    const [usersList, setUsersList] = useState([]);
+
+
     return (
         <aside className="aside-friends-community">
                     <div className="friends-community">
                         <section className="friends">
                             <div className="info-friends">
-                                <h2>Friends (30)</h2>
+                                <h2>Follower</h2>
                             </div>
 
                             <div className="list-friends">
                                 <ul className="list-column">
-                                    <li>
-
-                                        <p>Eddy</p>
-
-                                    </li>
-
-                                    <li>
-
-
-                                        <p>Mandi</p>
-
-                                    </li>
-
-                                    <li>
-
-                                        <p>Ninita</p>
-
-                                    </li>
-
-                                    <li>
-
-                                        <p>Viole</p>
-
-                                    </li>
-
-                                    <li>
-
-                                        <p>Maru</p>
-
-                                    </li>
+                                    
+                                {usersList.map((followUser) => <li>{user.username}</li>)}
                                 </ul>
                             </div>
 
@@ -90,4 +66,4 @@ const Rightbar = () => {
     )
 }
 
-export default Rightbar
+export default Follow

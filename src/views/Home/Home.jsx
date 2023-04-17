@@ -1,16 +1,13 @@
 import { useContext } from "react";
 import AuthContext from "../../contexts/AuthContext";
-import Navbar from "../../components/Navbar/Navbar";
 import { Link, NavLink } from 'react-router-dom';
 import './Home.css';
-import Rightbar from "../../components/Rightbar/Rightbar";
-
+import Follow from "../../components/Follow/Follow";
 
 const Home= () => {
     const {currentUser} = useContext(AuthContext)
     return (
     <>
-    <Navbar />
         <div className="container-main">
             <main>
                 <aside className="aside-profile">
@@ -109,7 +106,7 @@ const Home= () => {
                         <h2>Upcoming trips: </h2>
                     </div>
                 </div>
-                <Rightbar />
+                <Follow />
             </main>
         </div>
     </>

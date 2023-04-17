@@ -8,7 +8,6 @@ const Maps = () => {
 
   return (
     <>
-      <Navbar />
       <div className="container-main">
         <main>
           <aside className="aside-profile">

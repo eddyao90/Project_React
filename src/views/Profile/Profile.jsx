@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import AuthContext from "../../contexts/AuthContext";
-import Rightbar from "../../components/Rightbar/Rightbar";
+import Follow from "../../components/Follow/Follow";
 import { Link, NavLink } from 'react-router-dom';
 import './Profile.css'
 
@@ -103,7 +103,7 @@ export default function Profile(){
 
                     </section>
                 </div>
-                <Rightbar />
+                <Follow />
             </main>
         </div>
     </>
