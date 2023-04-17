@@ -1,14 +1,10 @@
-import { useContext } from "react";
-import AuthContext from "../../contexts/AuthContext";
-import Navbar from "../../components/Navbar/Navbar";
 import { Link, NavLink } from 'react-router-dom';
 import './Edit.css';
+import EditProfile from "../../components/EditProfile/EditProfile";
 
 const Edit= () => {
-    const {currentUser} = useContext(AuthContext)
     return (
         <>
-        <Navbar />
             <div className="container-main">
                 <main>
                     <aside className="aside-profile">
@@ -43,17 +39,16 @@ const Edit= () => {
     
                     </aside>
 
-                    <form action="/profile" method="POST"> 
+                  
                     <div className="main-middle">
                         <section className="welcome">
                             <h2>Edit Profile</h2>
                             <div className="edit-profile">
-
+                                <EditProfile />
                             </div>
                         </section>
     
                     </div>
-                    </form>
                     
                 </main>
             </div>

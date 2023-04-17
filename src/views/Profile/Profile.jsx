@@ -9,7 +9,7 @@ import './Profile.css'
 export default function Profile(){
 
     const {currentUser} = useContext(AuthContext)
-
+    console.log(currentUser)
        
     return (
     <>
@@ -18,8 +18,11 @@ export default function Profile(){
             <main>
                 <aside className="aside-profile">
                     <div className="img-profile">
+                    
                     </div>
                     <div className="info-bio">
+
+
                         <h3>Profile</h3>
 
                         <p>Traveler</p>
@@ -94,6 +97,22 @@ export default function Profile(){
                                 </div>
 
                             </div>
+
+                            
+                        </div>
+                        <div>
+                        <ul>
+                            <p>Gender: {currentUser.gender}</p>
+                            <p>Birthday: {currentUser.birthday}</p>
+                            <p>Languages: {currentUser.language}</p>
+                            <p>Looking for: {currentUser.looking}</p>
+                            <p>Travel type: {currentUser.travel}</p>
+                            <p>Activities: {currentUser.activities}</p>
+                            <p>Books: {currentUser.books}</p>
+                            <p>Music: {currentUser.music}</p>
+                            <p>Food: {currentUser.food}</p>
+                            <p>Top 3 countries: {currentUser.top3}</p>
+                        </ul>
                         </div>
                     </section>
                     <section className="welcome">
