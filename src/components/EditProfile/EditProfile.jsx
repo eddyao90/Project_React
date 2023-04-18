@@ -4,7 +4,9 @@ import AuthContext from "../../contexts/AuthContext"
 import { editUser } from "../../services/UserService";
 
 const genderOptions = ['Female', 'Male', 'Prefer no to say'];
-
+const lookingOption = ['Friends', 'Travel Partner', 'Businness Partner', 'Relationship', 'Travel Guru Advise']
+const travelOption =  ['Solo', 'Backpacker', 'Always with Someone', 'Never travelled before', 'Fancy Trip']
+const levelOption =  ['Baby Traveler', 'Explorer', 'Nomad', 'Cheap Traveler', 'Food Seeker', 'Adventurer']
 
 export default function EditProfile() {
     const [image, setImage] = useState([]);
@@ -20,7 +22,10 @@ export default function EditProfile() {
         books: "",
         music: "",
         food: "",
-        top3: ""
+        top3: "",
+        countries: "1",
+        cities: "1",
+        level: "Baby Traveler"
 
     })
     const { currentUser } = useContext(AuthContext);
@@ -50,7 +55,7 @@ export default function EditProfile() {
         e.preventDefault()
         let formData = new FormData();
 
-        formData.append("_id", currentUser["_id"]);
+        formData.append("id", currentUser["id"]);
     
         for (let data in user) {
             formData.append(data, user[data]);
@@ -62,6 +67,7 @@ export default function EditProfile() {
         
         editUser(formData)
         .then(response => {
+            console.log("response", response)
             navigate(`/profile/${currentUser.id}`)
         })
         .catch(err => console.log(err))
@@ -79,7 +85,22 @@ export default function EditProfile() {
 
                     <label>Last Name:</label>
                     <input name= 'lastName' value={user.lastName} type='text' onChange={handleOnChange} />
+
+                    <label>How many countries have you been?</label>
+                    <input name='countries' value={user.countries} type='number' onChange={handleOnChange} />
+                    
+                    <label>How many cities have you been?</label>
+                    <input name='cities' value={user.cities} type='number' onChange={handleOnChange} />
                 
+                    <label>Lever of Travel:</label>
+                    <select name="level" onChange={handleOnChange}>
+                        {
+                            levelOption.map(option => (
+                                <option value={option}>{option}</option>
+                            ))
+                        }
+                    </select>
+
                     <label>Gender:</label>
                     <select name="gender" onChange={handleOnChange}>
                         {
@@ -96,11 +117,21 @@ export default function EditProfile() {
                     <input name= 'language' value={user.language} type='text' onChange={handleOnChange} />
                 
                     <label>Looking for:</label>
-                    <input name='looking' value={user.looking} type='text' onChange={handleOnChange} />
-
+                    <select name="looking" onChange={handleOnChange}>
+                    {
+                            lookingOption.map(option => (
+                                <option value={option}>{option}</option>
+                            ))
+                        }
+                    </select>
                     <label>Travel type:</label>
-                    <input name= 'travel' value={user.travel} type='text' onChange={handleOnChange} />
-
+                    <select name="travel" onChange={handleOnChange}>
+                    {
+                            travelOption.map(option => (
+                                <option value={option}>{option}</option>
+                            ))
+                        }
+                    </select>
                     <label>Activities:</label>
                     <input name= 'activities' value={user.activities} type='text' onChange={handleOnChange} />
                 
@@ -116,7 +147,6 @@ export default function EditProfile() {
                     <label>Top 3 countries:</label>
                     <input name='top3' value={user.top3} type='text' onChange={handleOnChange} />
 
-                    
                 </div>
                 <button type="submit">Submit</button>
             </form>

@@ -2,10 +2,11 @@ import Navbar from "../../components/Navbar/Navbar";
 import { Link, NavLink } from "react-router-dom";
 import "./Maps.css";
 import Map from "../../components/Map/Map";
+import AuthContext from "../../contexts/AuthContext";
+import { useContext, useEffect } from "react";
 
-  
 const Maps = () => {
-
+  const {currentUser} = useContext(AuthContext)
   return (
     <>
       <div className="container-main">
@@ -13,9 +14,9 @@ const Maps = () => {
           <aside className="aside-profile">
             <div className="img-profile"></div>
             <div className="info-bio">
-              <h3>Profile</h3>
+              <h3>{currentUser.firstName}</h3>
 
-              <p>Traveler</p>
+              <p>{currentUser.level}</p>
             </div>
 
             <div className="social-media">
