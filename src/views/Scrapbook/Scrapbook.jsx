@@ -4,7 +4,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import { Link, NavLink } from 'react-router-dom';
 import './Scrapbook.css';
 import Form from "../../components/Form/Form"
-
+import Comments from "../../components/Comment/Comment";
 
 const Scrapbook= () => {
     const {currentUser} = useContext(AuthContext)
@@ -57,7 +57,7 @@ const Scrapbook= () => {
                         <section className="welcome">
                             <h2>Scrapbook</h2>
                         </section>
-                        <Form />
+                        <Comments />
     
                     </div>
                 </main>
