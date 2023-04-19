@@ -12,6 +12,7 @@ const Home= () => {
             <main>
                 <aside className="aside-profile">
                     <div className="img-profile">
+                    <img src={currentUser.image} alt='user image' />
                     </div>
                     <div className="info-bio">
                         <h3>{currentUser.firstName}</h3>

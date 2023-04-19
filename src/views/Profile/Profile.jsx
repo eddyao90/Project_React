@@ -31,7 +31,7 @@ export default function Profile(){
             <main>
                 <aside className="aside-profile">
                     <div className="img-profile">
-                    
+                    <img src={profile?.image} alt='user image' />
                     </div>
                     <div className="info-bio">
 

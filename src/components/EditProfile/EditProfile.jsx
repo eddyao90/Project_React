@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import AuthContext from "../../contexts/AuthContext"
 import { editUser } from "../../services/UserService";
 
-const genderOptions = ['Female', 'Male', 'Prefer no to say'];
+const genderOptions = ['Female', 'Male', 'Prefer not to say', 'Nonbinary'];
 const lookingOption = ['Friends', 'Travel Partner', 'Businness Partner', 'Relationship', 'Travel Guru Advise']
 const travelOption =  ['Solo', 'Backpacker', 'Always with Someone', 'Never travelled before', 'Fancy Trip']
 const levelOption =  ['Baby Traveler', 'Explorer', 'Nomad', 'Cheap Traveler', 'Food Seeker', 'Adventurer']
