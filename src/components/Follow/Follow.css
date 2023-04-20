@@ -9,7 +9,7 @@
   .list-friends ul,
   .list-communities ul {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-left: 10px;
   }
   
@@ -20,9 +20,13 @@
   
   .list-friends img,
   .list-communities img {
-    width: 8.4rem;
-    height: 10.2rem;
-    border-radius: 0.8rem;
+    width: 9.4rem;
+    height: 9.4rem;
+    border-radius: 7.8rem;
+    display: flex;
+    margin-left: -23px;
+    margin-right: 29px;
+    margin-bottom: 9px;
   }
   
   .aside-friends-community {
@@ -30,7 +34,8 @@
     flex-direction: column;
     align-items: start;
     height: 54.5rem;
-    width: 35rem;
+    width: 42rem;;
+    margin-right: -39px;
     background: var(--bg-home-sections);
     border-radius: 0.8rem;
     justify-content: start;
@@ -72,3 +77,15 @@
     gap: 10px;
   }
   
+  .following-list {
+    size: 10px;
+  }
+
+  .username-follow {
+    font-size: 18px;
+    color: black;
+  }
+
+  .see-all {
+    color: blue;
+  }

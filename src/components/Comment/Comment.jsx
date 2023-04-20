@@ -60,7 +60,7 @@ export default function Comments({ id }) {
                 <form className="form-style" onSubmit={handleOnSubmit}>
                     
                         <h1>Leave a message to your friend here:</h1>
-                        <textarea className="form-control" id="comment" name="comment" rows="2" value={newComment} onChange={handleOnChange}></textarea>
+                        <textarea className="form-control-comment" id="comment" name="comment" rows="2" value={newComment} onChange={handleOnChange}></textarea>
                         <button className="btn btn-primary" data-bs-toggle="button" type="submit">Post It!</button>
                        
                     

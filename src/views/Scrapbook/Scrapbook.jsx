@@ -12,11 +12,12 @@ const Scrapbook= () => {
                 <main>
                     <aside className="aside-profile">
                         <div className="img-profile">
+                        <img src={profile?.image} alt='user image' />
                         </div>
                         <div className="info-bio">
-                            <h3>Profile</h3>
+                        <h3>{profile?.firstName}</h3>
     
-                            <p>Traveler</p>
+                        <p>{profile?.level}</p>
                         </div>
     
                         <div className="social-media">

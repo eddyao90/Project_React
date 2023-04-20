@@ -53,7 +53,7 @@ const Home= () => {
                 </aside>
 
                 <div className="main-middle">
-                    <section className="welcome">
+                    <section className="welcome-home">
                         <h2>Welcome, {currentUser.firstName}</h2>
 
                         <p><span>Today´s inspiration:</span> Api result</p>

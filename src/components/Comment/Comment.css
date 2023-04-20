@@ -8,7 +8,7 @@ h1 {
     width: 400px;
   }
 
-.form-control {
+.form-control-comment {
     width: 850px;
     height: 100px;
     resize: none;
@@ -19,12 +19,12 @@ h1 {
     font-size: 20px;
     margin-top: -50px;
 }
-.form-control:focus {
+.form-control-comment:focus {
     outline: none;
     border: 1px solid #d0d0d0;
     box-shadow: inset 0 0 0.5rem #d0d0d0;
 }
-.form-control[placeholder] {
+.form-control-comment[placeholder] {
     font-style: italic;
     font-size: 0.875rem;
 }
@@ -41,14 +41,14 @@ h1 {
 
 
 /*=============== comment ===============*/
-body {
+/*body {
     width: 100%;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     align-items: stretch;
-}
+}*/
 .notepad {
     width: 80%;
     max-width: 600px;

@@ -39,10 +39,10 @@ const Follow = () => {
                                 <ul className="list-column">
                                 {
                                     followList.map((follow) => (
-                                        <li key={follow._id}>
+                                        <li className='following-list' key={follow._id}>
                                             <Link to={`/profile/${follow.following.id}`} >
                                                 <img src={follow.following.image} alt='user image' />
-                                                <p>{follow.following.username}</p>
+                                                <p className='username-follow'>{follow.following.username}</p>
                                             </Link>
                                         </li>
                                     ))
@@ -51,7 +51,7 @@ const Follow = () => {
                             </div>
 
                             <a href="#">
-                                <h4>See all</h4>
+                                <h4 className='see-all'>See all</h4>
                             </a>
 
                         </section>

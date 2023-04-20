@@ -19,6 +19,7 @@
     --text-edit-profile: #5a5a5a;
   }
   
+  /*
   body {
     width: 100vw;
     font-family: "Rubik", sans-serif;
@@ -27,7 +28,7 @@
     font-size: 1.8rem;
     align-items: center;
     align-items: stretch;
-  }
+  }*/
   
   .container-login {
     max-width: 111rem;
@@ -193,6 +194,7 @@
   
   div .img-profile {
     padding: 1.5rem;
+    margin-left: 12px;
   }
   
   .img-profile img {
@@ -203,7 +205,7 @@
   
   div .info-bio {
     width: 90%;
-    text-align: start;
+    text-align: center;
   }
   
   div .info-bio h3 {
@@ -227,6 +229,7 @@
     font-size: 1rem;
     padding-top: 0.8rem;
     width: 90%;
+    margin-left: 10px;
   }
   
   div .social-media a,
@@ -260,6 +263,7 @@
     background: var(--bg-home-sections);
     border-radius: 0.8rem;
     padding: 2.4rem;
+    margin-top: 1px;
   }
   .welcome h2 {
     font-size: 2.8rem;
@@ -314,7 +318,7 @@
   .list-friends ul,
   .list-communities ul {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-left: 10px;
   }
   
@@ -325,9 +329,9 @@
   
   .list-friends img,
   .list-communities img {
-    width: 8.4rem;
-    height: 10.2rem;
-    border-radius: 0.8rem;
+    width: 9.4rem;
+    height: 9.4rem;
+    border-radius: 7.8rem;
   }
   
   .aside-friends-community {
@@ -335,7 +339,8 @@
     flex-direction: column;
     align-items: start;
     height: 54.5rem;
-    width: 35rem;
+    width: 42rem;
+    margin-right: -39px;
     background: var(--bg-home-sections);
     border-radius: 0.8rem;
     justify-content: start;

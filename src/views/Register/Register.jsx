@@ -5,7 +5,7 @@ import Input from '../../components/Input/Input';
 import RegisterSchema from './../../Schemas/RegisterSchema';
 import { register } from "../../services/AuthService";
 import FormControl from "../../components/FormControl/FormControl";
-import Navbar from "../../components/Navbar/Navbar";
+
 
 const INITIAL_VALUES = {
     firstName: "",
@@ -46,9 +46,9 @@ export default function Register() {
     console.log(errors)
       
     return (
-    <div>
-        <Navbar />
-        <h1>Register</h1>
+    <div className="form-register">
+        <div className="inside-form">
+        <h1 className="register-title">Register</h1>
         <form onSubmit={handleSubmit}>
         <FormControl text='First Name' error={touched.firstName && errors.firstName} htmlFor='firstName'>
         <Input
@@ -115,6 +115,7 @@ export default function Register() {
             {isSubmitting ? "Loading" : "Submit"}
         </button>
         </form>
+    </div>
     </div>
 );
 }
