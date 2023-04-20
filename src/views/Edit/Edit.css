@@ -27,6 +27,7 @@
     font-size: 1.8rem;
     background: var(--bg);
     align-items: center;
+    align-items: stretch;
   }
   
   .container-login {

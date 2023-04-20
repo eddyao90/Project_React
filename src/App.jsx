@@ -1,9 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-
-import { getPosts } from './actions/posts';
-
-
 import { Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
@@ -21,14 +16,6 @@ import People from './views/People/People';
 
 
 const App = () => {
-  const [currentUser, setCurrentUser] = useState(0);
-  const dispatch = useDispatch();
-
-
-  useEffect(() => {
-    dispatch(getPosts());
-  }, [currentUser, dispatch]);
-
   return (
     <div className="App">
       <Navbar />
@@ -50,12 +37,12 @@ const App = () => {
           } />
           <Route path="people" element={
           <ProtectedRoute>
-          <People setCurrentUser={setCurrentUser}/>
+          <People/>
           </ProtectedRoute>
           } />
           <Route path="scrapbook" element={
           <ProtectedRoute>
-          <Scrapbook setCurrentUser={setCurrentUser}/>
+          <Scrapbook />
           </ProtectedRoute>
           } />
           <Route path="maps" element={

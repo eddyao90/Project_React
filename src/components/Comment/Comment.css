@@ -47,7 +47,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    align-items: stretch;
 }
 .notepad {
     width: 80%;

@@ -1,9 +1,7 @@
 import { useContext } from "react";
 import AuthContext from "../../contexts/AuthContext";
-import Navbar from "../../components/Navbar/Navbar";
 import { Link, NavLink } from 'react-router-dom';
 import './Scrapbook.css';
-import Form from "../../components/Form/Form"
 import Comments from "../../components/Comment/Comment";
 
 const Scrapbook= () => {
