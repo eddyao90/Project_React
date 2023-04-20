@@ -1,0 +1,19 @@
+.welcome-scrapbook {
+  border-radius: 10.8rem;
+  padding: 0.4rem;
+  margin-left: -23px;
+  }
+  .welcome-scrapbook h2 {
+    font-size: 39px;
+    font-weight: 400;
+    padding-bottom: 0rem;
+  }
+  
+  .welcome-scrapbook > p {
+    font-size: 1.2rem;
+    color: var(--text-bio-description);
+  }
+  
+  .welcome-scrapbook > p span {
+    font-weight: 700;
+  }

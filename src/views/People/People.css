@@ -1,0 +1,10 @@
+body {
+    width: 100vw;
+    font-family: "Rubik", sans-serif;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.8rem;
+    background: var(--bg);
+    align-items: center;
+    justify-content: flex-start;
+  }

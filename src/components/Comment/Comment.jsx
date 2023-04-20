@@ -1,6 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { createComment, deleteComment, getComments } from "../../services/CommentService";
 import AuthContext from '../../contexts/AuthContext';
+import './Comment.css';
+import Icon from '@mdi/react';
+import { mdiDeleteForever } from '@mdi/js';
 
 export default function Comments({ id }) {
     const [update, setUpdate] = useState(false);
@@ -54,26 +57,43 @@ export default function Comments({ id }) {
         <div className="Comments">
             {
                 currentUser &&
-                <form onSubmit={handleOnSubmit}>
-                    <div className="mb-3">
-                        <label htmlFor="comment" className="form-label">hey comment here</label>
+                <form className="form-style" onSubmit={handleOnSubmit}>
+                    
+                        <h1>Leave a message to your friend here:</h1>
                         <textarea className="form-control" id="comment" name="comment" rows="2" value={newComment} onChange={handleOnChange}></textarea>
-                    </div>
-                        <button type="submit">Submit</button>
-
+                        <button className="btn btn-primary" data-bs-toggle="button" type="submit">Post It!</button>
+                       
+                    
                 </form>
+
             }
             {
                 comments?.length > 0 &&
                 comments.map(comment => (
+                    <div className="comments-all">
                     <div key={ comment.id }>
-                        <h4>{ comment.user.username }</h4>
-                        <p>{ comment.comment }</p>
+                    <div className="notepad">
+  <div className="top"></div>
+  <div className="paper" contentEditable="true">
+  <h4 className="username-comment">{ comment.user.username } said:</h4><br/>
+  { comment.comment }
+  </div>
+</div>
                         {
                             currentUser.id === comment.user.id &&
-                            <p onClick={() => handleDeleteComment(comment.id)}>APAGAR</p>
+                            
+
+                            <button onClick={() => handleDeleteComment(comment.id)} className="btn btn-delete">
+                            <Icon path={mdiDeleteForever} size={1} />
+                            <span>Delete</span>
+                            </button>
                         }
+                
+                 
                     </div>
+                    </div>
+
+                    
                 ))
             }
         </div>

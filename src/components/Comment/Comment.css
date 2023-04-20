@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+h1 { 
+    color: #555;
+    margin: 1rem 0 1rem 0;
+    padding: 0;
+    font-size: 1.9rem;
+    width: 400px;
+  }
+
+.form-control {
+    width: 850px;
+    height: 100px;
+    resize: none;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    box-shadow: inset 0 0 0.25rem #ddd;
+    font-size: 20px;
+    margin-top: -50px;
+}
+.form-control:focus {
+    outline: none;
+    border: 1px solid #d0d0d0;
+    box-shadow: inset 0 0 0.5rem #d0d0d0;
+}
+.form-control[placeholder] {
+    font-style: italic;
+    font-size: 0.875rem;
+}
+
+.button-comment{
+    font-size: 21px;
+    margin-top: -35px;
+    margin-bottom: 46px;
+}
+
+.comments-all {
+    margin-top: 26px;
+}
+
+
+/*=============== comment ===============*/
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.notepad {
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, .15);
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+}
+.top {
+    width: 100%;
+    height: 50px;
+    background: #333;
+    border-radius: 5px 5px 0 0;
+}
+.paper {
+    width: 100%;
+    height: 100%;
+    min-height: 22vh;
+    padding: 35px 20px;
+    background: repeating-linear-gradient(#f1ede9, #f1ede9 31px, #94acd4 31px, #94acd4 32px);
+    font-family: 'Shadows Into Light', cursive;
+    line-height: 32px;
+    outline: 0;
+    font-size: 22px;
+}
+
+.username-comment {
+    color: rgb(240 232 232);
+    margin-top: -74px;
+    margin-bottom: 11px;
+    font-size: 25px;
+}
+
+.btn-primary {
+    width: 77px;
+    height: 38px;
+    border-radius: 30px;
+    color: #fff;
+    background-color: #333;
+    border-color: #23b873;
+    font-size: 16px;
+    --bs-btn-hover-bg: #0a933e;
+    margin-top: -41px;
+    margin-bottom: 50px;
+}
+
+.form-style{
+    margin-bottom: -40px;
+}
+
+
+
+
+
+.btn {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: 1px solid #bdbdbd;
+    height: 48px;
+    padding: 0 24px 0 16px;
+    letter-spacing: 0.25px;
+    border-radius: 24px;
+    cursor: pointer;
+}
+.btn:focus {
+    outline: none;
+}
+.btn .mdi {
+    margin-right: 8px;
+}
+.btn-delete {
+    font-size: 16px;
+    color: red;
+}
+.btn-delete > .mdi-delete-empty {
+    display: none;
+}
+.btn-delete:hover {
+    background-color: #fff5f5;
+}
+.btn-delete:hover > .mdi-delete-empty {
+    display: block;
+}
+.btn-delete:hover > .mdi-delete {
+    display: none;
+}
+.btn-delete:focus {
+    box-shadow: 0 0 0 4px #fcc;
+}

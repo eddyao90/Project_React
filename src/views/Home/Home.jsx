@@ -6,6 +6,7 @@ import Follow from "../../components/Follow/Follow";
 
 const Home= () => {
     const {currentUser} = useContext(AuthContext)
+
     return (
     <>
         <div className="container-main">

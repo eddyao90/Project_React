@@ -54,10 +54,11 @@ const Scrapbook= () => {
                     </aside>
     
                     <div className="main-middle">
-                        <section className="welcome">
+                        <section className="welcome-scrapbook">
                             <h2>Scrapbook</h2>
+                            <Comments />
                         </section>
-                        <Comments />
+                        
     
                     </div>
                 </main>
