@@ -4,21 +4,6 @@
     box-sizing: border-box;
   }
   
-  :root {
-    font-size: 70%;
-  
-    --bg: #ebffef;
-    --bg-header: #36db6d;
-    --bg-home-sections: #fff;
-    --text-bio: #2e7bb4;
-    --text-menu: #fff;
-    --line-menu: #2c6b99;
-    --input-search: #5579a1;
-    --aside-line: ##ecf2fa;
-    --text-bio-description: #999;
-    --text-count-infos: #5a5a5a;
-  }
-  
   body {
     width: 100vw;
     font-family: "Rubik", sans-serif;

@@ -28,18 +28,18 @@ const People= () => {
 
     return (
         <div className="main-middle">
-            <section className="welcome">
-                <h2>People to Follow</h2>
+            <section className="people-page">
+                <h2 className="text-people">People to Follow</h2>
                 {
                     usersList.length > 0 &&
                     usersList.map(user => (
                         <>
                         {
                             user.id !== currentUser.id && !user.alreadyFollowed &&
-                            <div>
-                                <h5>{user.name} {user.lastname}</h5>
-                                <p>{user.username}</p>
-                                <button onClick={() => handleFollow(user.id)}>Follow</button>
+                            <div className="people-each">
+                                <img className="pic" src={user?.image} alt='user image' />
+                                <p className="user-profile">{user.username}</p>
+                                <button className="button-85" onClick={() => handleFollow(user.id)}>Follow</button>
                             </div>
                         }
                         </>
