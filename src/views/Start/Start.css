@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: radial-gradient(circle, rgb(3, 155, 229) 20%, rgb(1, 51, 75) 120%);
+  }
+  
+  .banner {
+    font-size: 150px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    position: absolute;
+    font-family: 'Indie Flower', cursive;
+    left: 34%;
+    transform: translateX(-50%);
+    color: #b7dc30;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1px;
+  }
+  
+  
+  
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  
+  a {
+    font-size: 1.5rem;
+    padding: 1rem 3rem;
+    color: #f4f4f4;
+    text-transform: uppercase;
+  }
+  
+.app {
+    border-top: 0px;
+}
+
+
+
+
+/* CSS */
+.button-74 {
+  background-color: #fbeee0;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-top: 372px;
+  position: absolute;
+}
+
+.button-74:hover {
+  background-color: #fff;
+}
+
+.button-74:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .button-74 {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}
+
+
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4px;
+    margin-right: 180px;
+    margin-left: 29px;
+  }
+  
+  .button {
+    margin-top: 200px;
+    position: absolute;
+  }
