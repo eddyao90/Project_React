@@ -16,3 +16,10 @@
   margin: 12px;
   border-radius: 4px;
 }
+
+.map-head {
+  font-size: 50px;
+  text-align: center;
+  color: white;
+  margin-top: -20px;
+}

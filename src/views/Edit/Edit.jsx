@@ -1,19 +1,22 @@
 import { Link, NavLink } from 'react-router-dom';
 import './Edit.css';
 import EditProfile from "../../components/EditProfile/EditProfile";
+import { useContext } from 'react';
+import AuthContext from '../../contexts/AuthContext';
 
 const Edit= () => {
+    const { currentUser } = useContext(AuthContext);
     return (
         <>
             <div className="container-main">
                 <main>
-                    <aside className="aside-profile">
+                    {/*<aside className="aside-profile">
                         <div className="img-profile">
                         </div>
                         <div className="info-bio">
-                            <h3>Profile</h3>
+                            <h3>{currentUser.firstName}</h3>
     
-                            <p>Traveler</p>
+                            <p>{currentUser.level}</p>
                         </div>
     
                         <div className="social-media">
@@ -37,15 +40,12 @@ const Edit= () => {
     
                         </div>
     
-                    </aside>
+                    </aside>*/}
 
                   
                     <div className="main-middle">
-                        <section className="welcome">
-                            <h2>Edit Profile</h2>
-                            <div className="edit-profile">
+                        <section className="welcome-edit-profile">
                                 <EditProfile />
-                            </div>
                         </section>
     
                     </div>

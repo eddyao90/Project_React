@@ -22,7 +22,7 @@ function Mapa() {
   const [viewPort,setViewPort] = React.useState({
     longitude: 12.4,
     latitude: 37.8,
-    zoom : 14
+    zoom : 18
   })
 
   const handleAddClick = (e) => {
@@ -94,7 +94,7 @@ function Mapa() {
         projection={'globe'}
         initialViewState={{viewPort}}
         mapboxAccessToken="pk.eyJ1IjoiZGluaG95YW8iLCJhIjoiY2xnZjgzdzR0MDF4NjNkbW5pcnN3dG14MyJ9.aEGT6P6U9VoE2uMPIxEexA"
-        style={{ width: "600px", height: "600px" }}
+        style={{ width: "1400px", height: "680px" }}
         mapStyle="mapbox://styles/dinhoyao/clggrvu2h003z01qq6t0g0gd5"
         onDblClick={handleAddClick}
       >

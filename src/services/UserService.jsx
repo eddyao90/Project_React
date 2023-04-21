@@ -10,3 +10,4 @@ export const getPeopleToFollow = (currentUserId) => authenticatedHttp.get(`/peop
 export const editUser = (userInfo) => authenticatedHttp.post('/users/edit', userInfo)
 
 export const getOneUser = (id) => authenticatedHttp.get(`/users/${id}`);
+

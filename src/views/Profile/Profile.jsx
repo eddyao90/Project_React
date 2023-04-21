@@ -67,8 +67,8 @@ export default function Profile(){
                 <div className="main-middle">
                     <section className="welcome">
                         <h2>{profile?.firstName} {profile?.lastName}</h2>
-                        <div className="count-infos">
-                            <div className="photos-home">
+                        <div className="count-infos-profile">
+                            {/*<div className="photos-home">
                                 <p>Photos</p>
 
                                 <div className="img">
@@ -81,10 +81,10 @@ export default function Profile(){
                                     <p>64</p>
                                 </div>
 
-                            </div>
+                            </div>*/}
 
                             <div className="countires-home">
-                                <p>Countries</p>
+                                <p className="tag-country-city">Countries</p>
                                 <div className="img">
 
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -98,7 +98,7 @@ export default function Profile(){
                             </div>
 
                             <div className="cities-home">
-                                <p>Cities</p>
+                                <p className="tag-country-city">Cities</p>
 
                                 <div className="img">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -116,26 +116,20 @@ export default function Profile(){
                         <div>
                         {
                             profile &&
-                            <ul>
-                                <p>Gender: {profile.gender}</p>
-                                <p>Birthday: {profile.birthday}</p>
-                                <p>Languages: {profile.language}</p>
-                                <p>Looking for: {profile.looking}</p>
-                                <p>Travel type: {profile.travel}</p>
-                                <p>Activities: {profile.activities}</p>
-                                <p>Books: {profile.books}</p>
-                                <p>Music: {profile.music}</p>
-                                <p>Food: {profile.food}</p>
-                                <p>Top 3 countries: {profile.top3}</p>
+                            <ul className="profile-list">
+                                <p className="detail"><b>Gender:</b> {profile.gender}</p>
+                                <p className="detail"><b>Birthday:</b> {profile.birthday}</p>
+                                <p className="detail"><b>Languages:</b> {profile.language}</p>
+                                <p className="detail"><b>Looking for:</b> {profile.looking}</p>
+                                <p className="detail"><b>Travel type:</b> {profile.travel}</p>
+                                <p className="detail"><b>Activities:</b> {profile.activities}</p>
+                                <p className="detail"><b>Books:</b> {profile.books}</p>
+                                <p className="detail"><b>Music:</b> {profile.music}</p>
+                                <p className="detail"><b>Food:</b> {profile.food}</p>
+                                <p className="detail"><b>Top 3 countries:</b> {profile.top3}</p>
                             </ul>
                         }
                         </div>
-                    </section>
-                    <section className="welcome">
-                    <div className="main-middle">
-                        <h2>Upcoming trips: </h2>
-                    </div>
-
                     </section>
                 </div>
                 <Follow />

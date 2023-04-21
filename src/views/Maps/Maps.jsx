@@ -11,45 +11,10 @@ const Maps = () => {
     <>
       <div className="container-main">
         <main>
-          <aside className="aside-profile">
-            <div className="img-profile"></div>
-            <div className="info-bio">
-              <h3>{currentUser.firstName}</h3>
-
-              <p>{currentUser.level}</p>
-            </div>
-
-            <div className="social-media">
-              <div className="scrapbook-sidebar">
-                <NavLink
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
-                  to="/scrapbook"
-                >
-                  Scrapbook
-                </NavLink>
-              </div>
-
-              <div className="photos">
-                <NavLink
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
-                  to="/photos"
-                >
-                  Photos
-                </NavLink>
-              </div>
-            </div>
-          </aside>
-
           <div className="main-middle">
-            <section className="welcome">
-              <h2>Where have Y'all been?</h2>
-              <div className="count-infos">
+            <section className="welcome-map">
+              <h2 className="map-head">Where y'all have been?</h2>
                   <Map />
-              </div>
             </section>
           </div>
         </main>

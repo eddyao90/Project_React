@@ -16,9 +16,9 @@ const Home= () => {
                     <img src={currentUser.image} alt='user image' />
                     </div>
                     <div className="info-bio">
-                        <h3>{currentUser.firstName}</h3>
+                        <h3>{currentUser.username}</h3>
 
-                        <p>{currentUser.level}</p>
+                        <p className="home-user-level">{currentUser.level}</p>
                     </div>
 
                     <div className="social-media">
@@ -54,14 +54,13 @@ const Home= () => {
 
                 <div className="main-middle">
                     <section className="welcome-home">
-                        <h2>Welcome, {currentUser.firstName}</h2>
+                        <h2 className="welcome-tag"><b>Welcome</b>, {currentUser.firstName}</h2>
 
                         <p><span>Today´s inspiration:</span> Api result</p>
 
                         <div className="count-infos">
-                            <div className="photos-home">
+                            {/* <div className="photos-home">
                                 <p>Photos</p>
-
                                 <div className="img">
 
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -69,13 +68,13 @@ const Home= () => {
                                         <path d="M13 21v2.5l-3-2-3 2V21h-.5A3.5 3.5 0 0 1 3 17.5V5a3 3 0 0 1 3-3h14a1 1 0 0 1 1 1v17a1 1 0 0 1-1 1h-7zm0-2h6v-3H6.5a1.5 1.5 0 0 0 0 3H7v-2h6v2zm6-5V4H6v10.035A3.53 3.53 0 0 1 6.5 14H19zM7 5h2v2H7V5zm0 3h2v2H7V8zm0 3h2v2H7v-2z" />
                                     </svg>
 
-                                    <p></p>
+                                    <p>{currentUser.photos}</p>
                                 </div>
 
-                            </div>
+                            </div>*/}
 
                             <div className="countires-home">
-                                <p>Countries</p>
+                                <p className="tag-country-city">Countries</p>
                                 <div className="img">
 
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -89,7 +88,7 @@ const Home= () => {
                             </div>
 
                             <div className="cities-home">
-                                <p>Cities</p>
+                                <p className="tag-country-city">Cities</p>
 
                                 <div className="img">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">

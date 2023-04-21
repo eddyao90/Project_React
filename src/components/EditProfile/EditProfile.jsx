@@ -75,10 +75,12 @@ export default function EditProfile() {
 
     return(
         <div className="EditProfile">
+        
             <form onSubmit={ handleOnSubmit }>
-                <div className="form-edit-profile">
+            <div className="image-upload">
+            <h2 className="head-edit">Edit Profile</h2>
                     <label>Image:</label>
-                    <input name= 'image' type='file' onChange={handleOnChange} />
+                    <input className="image-file" name= 'image' type='file' onChange={handleOnChange} />
                 
                     <label>First Name:</label>
                     <input name= 'firstName' value={user.firstName} type='text' onChange={handleOnChange} />
@@ -147,8 +149,9 @@ export default function EditProfile() {
                     <label>Top 3 countries:</label>
                     <input name='top3' value={user.top3} type='text' onChange={handleOnChange} />
 
+                    <button className="button-79"  type="submit">Submit</button>
                 </div>
-                <button type="submit">Submit</button>
+
             </form>
         </div>
     )

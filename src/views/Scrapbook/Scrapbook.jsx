@@ -1,11 +1,28 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState  } from "react";
 import AuthContext from "../../contexts/AuthContext";
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useParams } from 'react-router-dom';
 import './Scrapbook.css';
 import Comments from "../../components/Comment/Comment";
+import { getOneUser } from "../../services/UserService";
 
-const Scrapbook= () => {
+export default function Scrapbook(){
+    const [profile, setProfile] = useState(null);
+    const { id } = useParams(); 
     const {currentUser} = useContext(AuthContext)
+
+    useEffect(() => {
+        if(id) {
+            getOneUser(id)
+            .then(res => setProfile(res))
+            .catch(err => console.log(err))
+        }
+    }, [id])
+
+    useEffect(() => {
+        console.log(profile)
+    }, [profile])
+       
+
     return (
         <>
             <div className="container-main">
@@ -65,5 +82,3 @@ const Scrapbook= () => {
         </>
     )
 }
-
-export default Scrapbook;
