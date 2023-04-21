@@ -46,7 +46,7 @@ export default function Profile(){
                         <div className="scrapbook-sidebar">
                         <NavLink
                         className={({ isActive }) => `nav-link ${isActive ? 'active': ''}`}
-                        to="/scrapbook">
+                        to={`/scrapbook/${profile?.id}`}>
                         Scrapbook
                         </NavLink>
                         </div>

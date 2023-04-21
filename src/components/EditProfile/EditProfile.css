@@ -6,3 +6,29 @@ label {
     display: block;
 }
 
+input.image-file {
+    font-size: 11px;
+    padding: 10px;
+    /* margin-bottom: -7px; */
+}
+
+form input {
+    display: flex;
+    align-items: center;
+    border: none;
+    /* border-radius: 1.4rem; */
+    padding: 5px;
+    /* margin-left: -5px; */
+    color: black;
+    outline: none;
+    border: 1px solid rgb(0 0 0);
+    width: 292px;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    padding: 5px;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}

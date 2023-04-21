@@ -4,6 +4,7 @@ import AuthContext from '../../contexts/AuthContext';
 import './Comment.css';
 import Icon from '@mdi/react';
 import { mdiDeleteForever } from '@mdi/js';
+import { useParams } from "react-router-dom";
 
 export default function Comments({ id }) {
     const [update, setUpdate] = useState(false);
@@ -12,8 +13,8 @@ export default function Comments({ id }) {
     const { currentUser } = useContext(AuthContext);
 
     useEffect(() => {
-        if(currentUser) {
-            getComments(currentUser.id)
+        if(id) {
+            getComments(id)
             .then(res => {
                 console.log(res)
                 let reversed = res.reverse();
@@ -21,7 +22,7 @@ export default function Comments({ id }) {
             })
             .catch(err => console.log(err))
         }
-    }, [currentUser, update])
+    }, [id, update])
 
     const handleOnChange = (e) => {
         const { value } = e.target;
@@ -31,10 +32,13 @@ export default function Comments({ id }) {
     const handleOnSubmit = (e) => {
         e.preventDefault();
 
+        console.log('entraaaaa')
+
         if(currentUser) {
             let infoToSend = {
-                id: currentUser.id,
-                comment: newComment
+                user: id,
+                comment: newComment,
+                whoWrote: currentUser.id
             }
             createComment(infoToSend)
             .then(res => setUpdate(!update))
@@ -59,10 +63,9 @@ export default function Comments({ id }) {
                 currentUser &&
                 <form className="form-style" onSubmit={handleOnSubmit}>
                     
-                        <h1>Leave a message to your friend here:</h1>
-                        <textarea className="form-control-comment" id="comment" name="comment" rows="2" value={newComment} onChange={handleOnChange}></textarea>
-                        <button className="btn btn-primary" data-bs-toggle="button" type="submit">Post It!</button>
-                       
+                    <h1>Leave a message to your friend here:</h1>
+                    <textarea className="form-control-comment" id="comment" name="comment" rows="2" value={newComment} onChange={handleOnChange}></textarea>
+                    <button className="btn btn-primary" data-bs-toggle="button" onClick={handleOnSubmit}>Post It!</button>
                     
                 </form>
 
@@ -75,12 +78,12 @@ export default function Comments({ id }) {
                     <div className="notepad">
   <div className="top"></div>
   <div className="paper" contentEditable="true">
-  <h4 className="username-comment">{ comment.user.username } said:</h4><br/>
+  <h4 className="username-comment">{ comment.whoWrote.username } said:</h4><br/>
   { comment.comment }
   </div>
 </div>
                         {
-                            currentUser.id === comment.user.id &&
+                            currentUser.id === comment.whoWrote.id &&
                             
 
                             <button onClick={() => handleDeleteComment(comment.id)} className="btn btn-delete">

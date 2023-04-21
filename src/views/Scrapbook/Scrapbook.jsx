@@ -7,8 +7,8 @@ import { getOneUser } from "../../services/UserService";
 
 export default function Scrapbook(){
     const [profile, setProfile] = useState(null);
-    const { id } = useParams(); 
-    const {currentUser} = useContext(AuthContext)
+    const {currentUser} = useContext(AuthContext);
+    const { id } = useParams()
 
     useEffect(() => {
         if(id) {
@@ -17,12 +17,7 @@ export default function Scrapbook(){
             .catch(err => console.log(err))
         }
     }, [id])
-
-    useEffect(() => {
-        console.log(profile)
-    }, [profile])
        
-
     return (
         <>
             <div className="container-main">
@@ -51,7 +46,7 @@ export default function Scrapbook(){
                             <div className="scrapbook-sidebar">
                             <NavLink
                             className={({ isActive }) => `nav-link ${isActive ? 'active': ''}`}
-                            to="/scrapbook">
+                            to={`/scrapbook/${profile?.id}`}>
                             Scrapbook
                             </NavLink>
                             </div>
@@ -72,7 +67,7 @@ export default function Scrapbook(){
                     <div className="main-middle">
                         <section className="welcome-scrapbook">
                             <h2>Scrapbook</h2>
-                            <Comments />
+                            <Comments id={id}/>
                         </section>
                         
     

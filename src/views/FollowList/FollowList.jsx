@@ -1,10 +1,9 @@
-import './Follow.css';
-import { useContext, useEffect, useState } from 'react';
-import { followUser, getPeopleIFollow, getPeopleWhoFollows } from '../../services/FollowService';
-import AuthContext from '../../contexts/AuthContext';
-import { Link } from 'react-router-dom';
+import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import AuthContext from "../../contexts/AuthContext";
+import { getPeopleIFollow, getPeopleWhoFollows } from "../../services/FollowService";
 
-const Follow = () => {
+export default function FollowList () {
     const [followList, setFollowList] = useState([]);
     const [followersList, setFollowersList] = useState([]);
     const { currentUser } = useContext(AuthContext);
@@ -13,23 +12,20 @@ const Follow = () => {
         if(currentUser) {
             getPeopleIFollow(currentUser.id)
             .then(followList => {
-                const splited = followList.slice(0, 3);
-                setFollowList(splited)
+                setFollowList(followList)
             })
             .catch(err => console.los(err))
             
             getPeopleWhoFollows(currentUser.id)
             .then(followersList => {
-                const splited = followersList.slice(0, 3);
-                setFollowersList(splited)
+                setFollowersList(followersList)
             })
             .catch(err => console.los(err))
         }
     }, [currentUser])
-
     return (
-        <aside className="aside-friends-community">
-                    <div className="friends-community">
+        
+        <div className="friends-community">
                         {
                             followList?.length > 0 && 
                             <section className="friends">
@@ -51,10 +47,6 @@ const Follow = () => {
                                 }
                                 </ul>
                             </div>
-
-                            <a href="/all-follows">
-                                <h4>See all</h4>
-                            </a>
                             </section>
                         }
 
@@ -80,52 +72,8 @@ const Follow = () => {
                                 </ul>
                             </div>
 
-                            <a href="/all-follows">
-                                <h4>See all</h4>
-                            </a>
-
                         </section>
                         }
-
-
-
-                       {/* <section className="communities">
-                            <div className="info-communities">
-                                <h2>Communities (3)</h2>
-                            </div>
-
-                            <div className="list-communities">
-                                <ul className="list-column-communities">
-                                    <li>
-
-
-                                        <p>Robots</p>
-
-                                    </li>
-
-                                    <li>
-
-                                        <p>Smile always</p>
-
-                                    </li>
-
-                                    <li>
-
-
-                                        <p>Ironhackers</p>
-
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <a href="#">
-                                <h4>See all</h4>
-                            </a>
-
-                        </section>*/}
                     </div>
-                </aside>
     )
 }
-
-export default Follow

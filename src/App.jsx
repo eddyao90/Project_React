@@ -8,6 +8,7 @@ import Register from './views/Register/Register'
 import Start from './views/Start/Start'
 import Profile from './views/Profile/Profile'
 import Scrapbook from './views/Scrapbook/Scrapbook'
+import FollowList from './views/FollowList/FollowList'
 import Maps from './views/Maps/Maps'
 import Photos from './views/Photos/Photos'
 import Edit from './views/Edit/Edit'
@@ -40,7 +41,7 @@ const App = () => {
           <People/>
           </ProtectedRoute>
           } />
-          <Route path="scrapbook" element={
+          <Route path="scrapbook/:id" element={
           <ProtectedRoute>
           <Scrapbook />
           </ProtectedRoute>
@@ -53,6 +54,11 @@ const App = () => {
           <Route path="photos" element={
           <ProtectedRoute>
           <Photos />
+          </ProtectedRoute>
+          } />
+          <Route path="all-follows" element={
+          <ProtectedRoute>
+          <FollowList />
           </ProtectedRoute>
           } />
           <Route path="edit-profile" element={

@@ -59,7 +59,7 @@ const Navbar = () => {
               <li className="nav-item">
               <NavLink
                     className={({ isActive }) => `nav-link ${isActive ? 'active': ''}`}
-                    to="/scrapbook">
+                    to={`/scrapbook/${currentUser?.id}`}>
                     Scrapbook
                   </NavLink>
               </li>
