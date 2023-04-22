@@ -128,16 +128,16 @@ function Mapa() {
               anchor="left"
               >
       <div className="card">
-        <label>Place</label>
+      <label className="map-label">Place</label>
         <h4 className="place">{p.title}</h4>
-        <label>Review</label>
+        <label className="map-label">Review</label>
         <p className="descr">{p.descr}</p>
-        <label>Rating</label>
+        <label className="map-label">Rating</label>
         <div className="stars">
           {Array(p.rating).fill(<StarIcon className="star"/>)}
         </div>
 
-        <label>Information</label>
+        <label className="map-label">Information</label>
 
         <div className="info">
           <span className="username">Created by:<b>{p.user.username}</b></span>
@@ -161,15 +161,15 @@ function Mapa() {
             >
     <div>
   <form onSubmit={handlePinSubmit}>
-    <label>Title</label>
+  <label className="map-label">Title</label>
     <textarea placeholder="enter a title"
     onChange={(e) => setTitle(e.target.value)}>
     </textarea>
-<label>Review</label>
+    <label className="map-label">Review</label>
 <textarea placeholder="share your review"
 onChange={(e) => setDescr(e.target.value)}>
 </textarea>
-<label>Rating</label>
+<label className="map-label">Rating</label>
 <select onChange={(e) => setRating(e.target.value)}>
 <option value= "1">1</option>
 <option value= "2">2</option>

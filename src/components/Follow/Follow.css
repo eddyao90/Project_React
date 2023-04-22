@@ -85,9 +85,22 @@
   .username-follow {
     font-size: 18px;
     color: black;
+    margin-left: -8px;
   }
 
   .see-all {
     color: blue;
     margin-left: 10px;
   }
+
+  a {
+    font-size: 1.5rem;
+    padding: 1rem 3rem;
+    color: #000000;
+    /* size: 31px; */
+    text-transform: capitalize;
+  }
+
+  .seeall {
+    text-decoration:none;
+ }

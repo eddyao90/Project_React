@@ -51,14 +51,14 @@ export default function Scrapbook(){
                             </NavLink>
                             </div>
     
-                            <div className="photos">
+                            {/*<div className="photos">
                             <NavLink
                             className={({ isActive }) => `nav-link ${isActive ? 'active': ''}`}
                             to="/photos">
                             Photos
                             </NavLink>
                             </div>
-    
+    */}
     
                         </div>
     

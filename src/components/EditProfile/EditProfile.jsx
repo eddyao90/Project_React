@@ -28,6 +28,7 @@ export default function EditProfile() {
         level: "Baby Traveler"
 
     })
+    
     const { currentUser } = useContext(AuthContext);
     const navigate = useNavigate();
 
@@ -79,22 +80,22 @@ export default function EditProfile() {
             <form onSubmit={ handleOnSubmit }>
             <div className="image-upload">
             <h2 className="head-edit">Edit Profile</h2>
-                    <label>Image:</label>
+                    <label className="label-edit">Image:</label>
                     <input className="image-file" name= 'image' type='file' onChange={handleOnChange} />
                 
-                    <label>First Name:</label>
+                    <label className="label-edit">First Name:</label>
                     <input name= 'firstName' value={user.firstName} type='text' onChange={handleOnChange} />
 
-                    <label>Last Name:</label>
+                    <label className="label-edit">Last Name:</label>
                     <input name= 'lastName' value={user.lastName} type='text' onChange={handleOnChange} />
 
-                    <label>How many countries have you been?</label>
+                    <label className="label-edit">How many countries have you been?</label>
                     <input name='countries' value={user.countries} type='number' onChange={handleOnChange} />
                     
-                    <label>How many cities have you been?</label>
+                    <label className="label-edit">How many cities have you been?</label>
                     <input name='cities' value={user.cities} type='number' onChange={handleOnChange} />
                 
-                    <label>Lever of Travel:</label>
+                    <label className="label-edit">Lever of Travel:</label>
                     <select name="level" onChange={handleOnChange}>
                         {
                             levelOption.map(option => (
@@ -103,7 +104,7 @@ export default function EditProfile() {
                         }
                     </select>
 
-                    <label>Gender:</label>
+                    <label className="label-edit">Gender:</label>
                     <select name="gender" onChange={handleOnChange}>
                         {
                             genderOptions.map(option => (
@@ -112,13 +113,13 @@ export default function EditProfile() {
                         }
                     </select>
 
-                    <label>Birthday:</label>
-                    <input name= 'birthday' value={user.birthday} type='text' onChange={handleOnChange} />
+                    <label className="label-edit">Birthday:</label>
+                    <input name= 'birthday' value={user.birthday} type='date' onChange={handleOnChange} />
 
-                    <label>Language:</label>
+                    <label className="label-edit">Language:</label>
                     <input name= 'language' value={user.language} type='text' onChange={handleOnChange} />
                 
-                    <label>Looking for:</label>
+                    <label className="label-edit">Looking for:</label>
                     <select name="looking" onChange={handleOnChange}>
                     {
                             lookingOption.map(option => (
@@ -126,7 +127,7 @@ export default function EditProfile() {
                             ))
                         }
                     </select>
-                    <label>Travel type:</label>
+                    <label className="label-edit">Travel type:</label>
                     <select name="travel" onChange={handleOnChange}>
                     {
                             travelOption.map(option => (
@@ -134,19 +135,19 @@ export default function EditProfile() {
                             ))
                         }
                     </select>
-                    <label>Activities:</label>
+                    <label className="label-edit">Activities:</label>
                     <input name= 'activities' value={user.activities} type='text' onChange={handleOnChange} />
                 
-                    <label>Books:</label>
+                    <label className="label-edit">Books:</label>
                     <input name='books' value={user.books} type='text' onChange={handleOnChange} />
 
-                    <label>Music:</label>
+                    <label className="label-edit">Music:</label>
                     <input name= 'music' value={user.music} type='text' onChange={handleOnChange} />
 
-                    <label>Food:</label>
+                    <label className="label-edit">Food:</label>
                     <input name= 'food' value={user.food} type='text' onChange={handleOnChange} />
                 
-                    <label>Top 3 countries:</label>
+                    <label className="label-edit">Top 3 countries:</label>
                     <input name='top3' value={user.top3} type='text' onChange={handleOnChange} />
 
                     <button className="button-79"  type="submit">Submit</button>

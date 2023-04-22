@@ -131,6 +131,7 @@
     background: var(--bg-home-sections);
     border-radius: 0.8rem;
     justify-content: start;
+    margin-left: 41px;
   }
   
   .aside-profile > div + div::after {
@@ -310,6 +311,7 @@
     background: var(--bg-home-sections);
     border-radius: 0.8rem;
     justify-content: start;
+    margin-right: -126px;
   }
   
   .aside-friends-community > div + div::after {
@@ -354,4 +356,24 @@
 
   .welcome-tag {
     font-size: 20px;
+  }
+
+  div .social-media a, div .orgs a {
+    text-decoration: none;
+    color: var(--text-bio);
+    font-size: 17px;
+  }
+
+  div .info-bio h3 {
+    padding: 0.8rem 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-bio);
+    font-size: 25px;
+  }
+
+  div .info-bio p {
+    padding-bottom: 0.8rem;
+    font-size: 19px;
+    color: var(--text-bio-description);
   }

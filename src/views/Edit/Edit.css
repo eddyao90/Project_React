@@ -7,6 +7,7 @@
   :root {
     font-size: 70%;
   
+  
     --bg: #ebffef;
     --bg-header: #36db6d;
     --bg-home-sections: #fff;
@@ -16,6 +17,7 @@
     --aside-line: ##ecf2fa;
     --text-bio-description: #999;
     --text-edit-profile: #5a5a5a;
+
   }
   
   /*
@@ -28,7 +30,7 @@
     align-items: center;
     align-items: stretch;
   }*/
-  
+
   .container-login {
     max-width: 111rem;
     height: auto;
@@ -434,7 +436,7 @@
     touch-action: manipulation;
     width: 100px;
     margin-top: 13px;
-    margin-left: 289px;
+    
 }
 
 .button-79:disabled {
@@ -481,8 +483,13 @@ input.image-file {
 label {
   color: blue;
   font-size: 14px;
-  border-bottom: 1.5px solid black;
   margin: 3px 0;
   margin-bottom: 9px;
   margin-top: 11px;
+}
+
+select {
+  word-wrap: normal;
+  width: 292px;
+  border-radius: 9px;
 }

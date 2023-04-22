@@ -6,6 +6,9 @@ import './Profile.css'
 import { getOneUser } from "../../services/UserService";
 
 
+const date = new Date("2023-04-11T00:00:00.000Z");
+const options = { year: 'numeric', month: 'long', day: 'numeric' };
+const formattedDate = date.toLocaleDateString('en-GB', options);
 
 export default function Profile(){
     const [profile, setProfile] = useState(null);
@@ -34,8 +37,6 @@ export default function Profile(){
                     <img src={profile?.image} alt='user image' />
                     </div>
                     <div className="info-bio">
-
-
                         <h3>{profile?.firstName}</h3>
 
                         <p>{profile?.level}</p>
@@ -50,15 +51,21 @@ export default function Profile(){
                         Scrapbook
                         </NavLink>
                         </div>
-
-                        <div className="photos">
+                        <div className="maps">
+                        <NavLink
+                        className={({ isActive }) => `nav-link ${isActive ? 'active': ''}`}
+                        to="/maps">
+                        Maps
+                        </NavLink>
+                        </div>
+                        {/*<div className="photos">
                         <NavLink
                         className={({ isActive }) => `nav-link ${isActive ? 'active': ''}`}
                         to="/photos">
                         Photos
                         </NavLink>
                         </div>
-
+                    */}
 
                     </div>
 
@@ -118,7 +125,7 @@ export default function Profile(){
                             profile &&
                             <ul className="profile-list">
                                 <p className="detail"><b>Gender:</b> {profile.gender}</p>
-                                <p className="detail"><b>Birthday:</b> {profile.birthday}</p>
+                                <p className="detail"><b>Birthday:</b> {profile.birthday && new Date(profile.birthday).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
                                 <p className="detail"><b>Languages:</b> {profile.language}</p>
                                 <p className="detail"><b>Looking for:</b> {profile.looking}</p>
                                 <p className="detail"><b>Travel type:</b> {profile.travel}</p>
@@ -127,6 +134,7 @@ export default function Profile(){
                                 <p className="detail"><b>Music:</b> {profile.music}</p>
                                 <p className="detail"><b>Food:</b> {profile.food}</p>
                                 <p className="detail"><b>Top 3 countries:</b> {profile.top3}</p>
+
                             </ul>
                         }
                         </div>

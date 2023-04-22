@@ -69,7 +69,7 @@ return (
                 />
             </FormControl>
 
-            <button className="btn btn-primary" type="submit" disabled={isSubmitting}>
+            <button className="btn-login" type="submit" disabled={isSubmitting}>
                 {isSubmitting
                 ? 'Submitting...'
                 : 'Submit'

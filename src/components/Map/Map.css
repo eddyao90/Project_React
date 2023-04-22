@@ -22,7 +22,7 @@ position:absolute;
   font-size: 14px;
 }
 
-label {
+.map-label {
 color: blue;
 font-size: 14px;
 border-bottom: 1.5px solid black;

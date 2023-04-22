@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 h1 { 
-    color: #555;
+    color: rgb(0, 0, 0);
     margin: 1rem 0 1rem 0;
     padding: 0;
     font-size: 1.9rem;
@@ -52,7 +52,6 @@ h1 {
 .notepad {
     width: 80%;
     max-width: 600px;
-    box-shadow: 10px 10px 40px rgba(0, 0, 0, .15);
     border-radius: 0 0 10px 10px;
     overflow: hidden;
 }
@@ -122,6 +121,7 @@ h1 {
 .btn-delete {
     font-size: 16px;
     color: red;
+    margin-top: 10px;
 }
 .btn-delete > .mdi-delete-empty {
     display: none;
@@ -137,4 +137,31 @@ h1 {
 }
 .btn-delete:focus {
     box-shadow: 0 0 0 4px #fcc;
+}
+
+
+button.btn.btn-primary {
+    width: 94px;
+}
+
+.btn:hover {
+    color: #000;
+    background-color: #fff;
+    border-color: var(--bs-btn-hover-border-color);
+}
+
+.btn-delete {
+    font-size: 16px;
+    color: #e9ecef;
+    margin-top: 10px;
+    border-color: red;
+}
+
+.btn-delete:hover {
+    background-color: rgb(254, 0, 0);
+    color: #000;
+}
+
+.Comments {
+    width: 1100px;
 }

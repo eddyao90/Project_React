@@ -49,18 +49,18 @@ const Navbar = () => {
                     Profile
                   </NavLink>
                   </li>
-              <li className="nav-item">
+                  <li className="nav-item">
               <NavLink
                     className={({ isActive }) => `nav-link ${isActive ? 'active': ''}`}
-                    to="/people">
-                    People
+                    to={`/scrapbook/${currentUser?.id}`}>
+                    Scrapbook
                   </NavLink>
               </li>
               <li className="nav-item">
               <NavLink
                     className={({ isActive }) => `nav-link ${isActive ? 'active': ''}`}
-                    to={`/scrapbook/${currentUser?.id}`}>
-                    Scrapbook
+                    to="/people">
+                    People
                   </NavLink>
               </li>
               <li className="nav-item">

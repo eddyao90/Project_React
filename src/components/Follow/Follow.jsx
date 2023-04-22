@@ -52,8 +52,8 @@ const Follow = () => {
                                 </ul>
                             </div>
 
-                            <a href="/all-follows">
-                                <h4>See all</h4>
+                            <a className='seeall' href="/all-follows">
+                                <h4 className='see-all'>See all</h4>
                             </a>
                             </section>
                         }
@@ -70,7 +70,7 @@ const Follow = () => {
                                 {
                                     followersList.map((follow) => (
                                         <li key={follow._id}>
-                                            <Link to={`/profile/${follow.follower.id}`} >
+                                            <Link to={`/profile/${follow.follower.id}`} style={{ textDecoration: 'none' }}>
                                                 <img src={follow.follower.image} alt='user image' />
                                                 <p>{follow.follower.username}</p>
                                             </Link>
@@ -80,49 +80,12 @@ const Follow = () => {
                                 </ul>
                             </div>
 
-                            <a href="/all-follows">
-                                <h4>See all</h4>
+                            <a className='seeall' href="/all-follows">
+                            <h4 className='see-all'>See all</h4>
                             </a>
 
                         </section>
                         }
-
-
-
-                       {/* <section className="communities">
-                            <div className="info-communities">
-                                <h2>Communities (3)</h2>
-                            </div>
-
-                            <div className="list-communities">
-                                <ul className="list-column-communities">
-                                    <li>
-
-
-                                        <p>Robots</p>
-
-                                    </li>
-
-                                    <li>
-
-                                        <p>Smile always</p>
-
-                                    </li>
-
-                                    <li>
-
-
-                                        <p>Ironhackers</p>
-
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <a href="#">
-                                <h4>See all</h4>
-                            </a>
-
-                        </section>*/}
                     </div>
                 </aside>
     )
