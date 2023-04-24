@@ -1,11 +1,11 @@
-import './Follow.css';
+import './FollowerList.css';
 import { useContext, useEffect, useState } from 'react';
 import { followUser, getPeopleIFollow, getPeopleWhoFollows } from '../../services/FollowService';
 import AuthContext from '../../contexts/AuthContext';
 import { Link, useParams } from 'react-router-dom';
 import { getOneUser } from "../../services/UserService";
 
-const Follow = () => {
+const FollowerList = () => {
     const [followList, setFollowList] = useState([]);
     const [followersList, setFollowersList] = useState([]);
     const { currentUser } = useContext(AuthContext);
@@ -70,7 +70,7 @@ const Follow = () => {
           </ul>
       </div>
 
-      <a className='seeall'  style={{ textDecoration: 'none' }} href={`/all-follows/${currentUser.id}`}>
+      <a className='seeall'  style={{ textDecoration: 'none' }} href={`/all-follows/${id}`}>
           <h4 className='see-all'>See all</h4>
       </a>
     </section>
@@ -112,7 +112,7 @@ const Follow = () => {
         ))}
       </ul>
     </div>
-    <a className='seeall'  style={{ textDecoration: 'none' }}  href={`/all-follows/${currentUser.id}`}>
+    <a className='seeall'  style={{ textDecoration: 'none' }}  href={`/all-follows/${id}`}>
       <h4 className='see-all' >See all</h4>
     </a>
   </section>
@@ -127,4 +127,4 @@ const Follow = () => {
     )
 }
 
-export default Follow
+export default FollowerList

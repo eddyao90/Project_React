@@ -8,3 +8,7 @@
     text-align: center;
 }
 
+li.following-list-people {
+    margin-right: 15px;
+    margin-left: 15px;
+}

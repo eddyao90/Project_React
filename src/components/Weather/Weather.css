@@ -74,6 +74,7 @@
 	top: 3px;
     flex-direction: column;
     display: flex;
+	margin-left: 44px;
 }
 
 
@@ -83,7 +84,7 @@
 
  .Card {
 	 padding: 1px;
-	 border-radius: var(--border-radius);
+	 border-radius: 45px;;
 	 background: linear-gradient(-67deg, rgba(200, 216, 231, .7), rgba(255, 255, 255, .8));
 	 overflow: hidden;
 	 box-shadow: -2px -2px 6px rgba(255, 255, 255, .6), 2px 2px 12px #c8d8e7;

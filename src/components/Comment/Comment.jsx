@@ -88,13 +88,14 @@ export default function Comments({ id }) {
           <div className="comments-all">
             <div key={comment.id}>
               <div className="notepad">
-                <div className="top"></div>
+                <div className="top">
+                <h4 className="username-comment" style={{ display: 'inline-block' }}>
+        {comment.whoWrote.username} said:
+      </h4>
+      <p className="posted" style={{ display: 'inline-block' }}>Posted on: {new Date(comment.createdAt).toLocaleString()}</p>
+                  </div>
                 <div className="paper" contentEditable="true">
-                  <h4 className="username-comment">
-                    {comment.whoWrote.username} said:
-                  </h4>
-                  <br />
-                  {comment.comment}
+                {comment.comment}
                 </div>
                 {currentUser.id === comment.whoWrote.id && (
                   <button

@@ -29,7 +29,10 @@ export default function Login () {
         loginService({ email: values.email, password: values.password})
         .then(response => {
             login(response.accessToken);
-        })
+            setTimeout(() => {
+            window.location.reload();
+        }, 100);
+    })
         .catch(err => {
             if (err?.response?.data?.message) {
                 setFieldError('email', err?.response?.data?.message)

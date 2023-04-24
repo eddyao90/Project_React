@@ -13,7 +13,7 @@ const Maps = () => {
         <main>
           <div className="main-middle">
             <section className="welcome-map">
-              <h2 className="map-head">Where have y'all been?"</h2>
+              <h2 className="map-head">Where have y'all been?</h2>
                   <Map />
             </section>
           </div>

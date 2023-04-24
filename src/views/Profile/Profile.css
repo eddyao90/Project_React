@@ -123,6 +123,7 @@
     background: var(--bg-home-sections);
     border-radius: 0.8rem;
     justify-content: start;
+    margin-left: 15px;
   }
   
   .aside-profile > div + div::after {

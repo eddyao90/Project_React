@@ -22,7 +22,7 @@ function Mapa() {
   const [viewPort,setViewPort] = React.useState({
     longitude: 12.4,
     latitude: 37.8,
-    zoom : 18
+    zoom : 3
   })
 
   const handleAddClick = (e) => {
@@ -59,6 +59,8 @@ function Mapa() {
         setRating(1)
         setDescr(null)
         setTitle(null)
+
+        window.location.reload(true);
       }
       }catch(err)
     {
@@ -94,7 +96,7 @@ function Mapa() {
         projection={'globe'}
         initialViewState={{viewPort}}
         mapboxAccessToken="pk.eyJ1IjoiZGluaG95YW8iLCJhIjoiY2xnZjgzdzR0MDF4NjNkbW5pcnN3dG14MyJ9.aEGT6P6U9VoE2uMPIxEexA"
-        style={{ width: "1400px", height: "640px" }}
+        style={{ width: "1400px", height: "600px" }}
         mapStyle="mapbox://styles/dinhoyao/clggrvu2h003z01qq6t0g0gd5"
         onDblClick={handleAddClick}
       >
@@ -112,7 +114,7 @@ function Mapa() {
               <LocationOnIcon 
                 className="icon"
                 onClick = {() => handleMarkerClicked(p._id,p.lat,p.long)}
-                style = {{fontSize: viewPort.zoom * 2, color : p?.user?.id === currentUser?.id ? "red" : "orange"}}
+                style = {{fontSize: viewPort.zoom * 8, color : p?.user?.id === currentUser?.id ? "orange" : "red"}}
 
               />
             </Marker>
@@ -170,7 +172,7 @@ function Mapa() {
 onChange={(e) => setDescr(e.target.value)}>
 </textarea>
 <label className="map-label">Rating</label>
-<select onChange={(e) => setRating(e.target.value)}>
+<select className="select-star" onChange={(e) => setRating(e.target.value)}>
 <option value= "1">1</option>
 <option value= "2">2</option>
 <option value= "3">3</option>

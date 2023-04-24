@@ -3,7 +3,7 @@ import AuthContext from "../../contexts/AuthContext";
 import './People.css';
 import { getPeopleToFollow } from "../../services/UserService";
 import { followUser } from "../../services/FollowService";
-
+import { Link } from "react-router-dom";
 
 const People= () => {
     const [update, setUpdate] = useState(true)
@@ -37,8 +37,10 @@ const People= () => {
                         {
                             user.id !== currentUser.id && !user.alreadyFollowed &&
                             <div className="people-each">
-                                <img className="pic" src={user?.image} alt='user image' />
-                                <p className="user-profile">{user.username}</p>
+                            <Link to={`/profile/${user?.id}`} style={{ textDecoration: 'none' }}>
+                            <img className="pic" src={user?.image} alt='user image' />
+                            <p className="user-profile">{user?.username}</p>
+                            </Link>
                                 <button className="button-85" onClick={() => handleFollow(user.id)}>Follow</button>
                             </div>
                         }

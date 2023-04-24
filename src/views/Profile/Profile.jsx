@@ -4,6 +4,7 @@ import Follow from "../../components/Follow/Follow";
 import { Link, NavLink, useParams } from 'react-router-dom';
 import './Profile.css'
 import { getOneUser } from "../../services/UserService";
+import FollowerList from "../../components/FollowerList/FollowerList";
 
 
 const date = new Date("2023-04-11T00:00:00.000Z");
@@ -140,7 +141,7 @@ export default function Profile(){
                         </div>
                     </section>
                 </div>
-                <Follow />
+                <FollowerList />
             </main>
         </div>
     </>

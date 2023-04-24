@@ -60,6 +60,8 @@ h1 {
     height: 50px;
     background: #333;
     border-radius: 5px 5px 0 0;
+    display: flex;
+    justify-content: space-between;
 }
 .paper {
     width: 100%;
@@ -71,13 +73,19 @@ h1 {
     line-height: 32px;
     outline: 0;
     font-size: 22px;
+    margin-left: 1px;
+
 }
 
 .username-comment {
-    color: rgb(240 232 232);
-    margin-top: -74px;
-    margin-bottom: 11px;
+    color: rgb(255 255 255);
+    margin-top: 11px;
+    margin-bottom: 42px;
     font-size: 25px;
+    font-family: auto;
+    text-transform: capitalize;
+    margin-left: 8px;
+    margin-right: 118px;
 }
 
 .btn-primary {
@@ -164,4 +172,11 @@ button.btn.btn-primary {
 
 .Comments {
     width: 1100px;
+}
+
+.posted {
+    color: white;
+    font-size: 13px;
+    margin-top: 18px;
+    margin-right: 10px;
 }

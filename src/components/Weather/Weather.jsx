@@ -28,7 +28,7 @@ const Weather = () => {
       <form onSubmit={handleSubmit}>
       <div className="Card">
   <div className="CardInner">
-  <label className='label-wather'>Search to see the waether</label>
+  <label className='label-wather'>Check the weather of your next destination!</label>
   <div className="container">
     <div className="Icon">
     <button className="button-without-border" type="submit">
