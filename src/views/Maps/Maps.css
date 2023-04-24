@@ -18,8 +18,12 @@
 }
 
 .map-head {
-  font-size: 50px;
+  margin-top: -26px;
+  font-family: 'Indie Flower', cursive;
+  font-size: 75px;
   text-align: center;
-  color: white;
-  margin-top: -20px;
+  margin-bottom: 15px;
+  color: #b7dc30;
+  -webkit-text-stroke-width: 0.9px;
+  -webkit-text-stroke-color: black;
 }

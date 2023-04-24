@@ -1,0 +1,47 @@
+
+.Login-form {
+    position: absolute;
+    top: 48%;
+    left: 62%;
+    transform: translate(-50%, -50%);
+    border: 7px solid #55555524;
+    width: 285px;
+    height: 366px;
+    border-radius: 19px;
+    background-color: #190c0c9e;
+    margin-left: -128px;
+
+}
+
+
+.register-title {
+        color: rgb(241 239 239);
+        margin: 12px -134px 1rem 5px;
+        padding: 0;
+        font-size: 1.9rem;
+        width: 400px;
+    }
+
+
+.btn-login {
+    width: 91px;
+        margin-left: 71px;
+        border-radius: 30px;
+        color: #fff;
+        background-color: #333;
+        border-color: #e4e4e4;
+        font-size: 16px;
+        --bs-btn-hover-bg: #0a933e;
+        margin-top: 24px;
+}
+
+
+.FormControl {
+    width: 250px;
+    height: 255px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 4px;
+    margin-bottom: 22px;
+}

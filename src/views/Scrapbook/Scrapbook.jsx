@@ -4,11 +4,13 @@ import { Link, NavLink, useParams } from 'react-router-dom';
 import './Scrapbook.css';
 import Comments from "../../components/Comment/Comment";
 import { getOneUser } from "../../services/UserService";
+import { useNavigate } from 'react-router-dom';
 
 export default function Scrapbook(){
     const [profile, setProfile] = useState(null);
     const {currentUser} = useContext(AuthContext);
     const { id } = useParams()
+    const navigate = useNavigate();
 
     useEffect(() => {
         if(id) {
@@ -27,7 +29,7 @@ export default function Scrapbook(){
                         <img src={profile?.image} alt='user image' />
                         </div>
                         <div className="info-bio">
-                        <h3>{profile?.firstName}</h3>
+                        <h3>{profile?.username}</h3>
     
                         <p>{profile?.level}</p>
                         </div>
@@ -38,6 +40,7 @@ export default function Scrapbook(){
                             <NavLink
                             className={({ isActive }) => `nav-link ${isActive ? 'active': ''}`}
                             to="/profile"
+                            onClick={() => navigate(-1)}
                             >
                             Profile
                             </NavLink>
@@ -50,6 +53,13 @@ export default function Scrapbook(){
                             Scrapbook
                             </NavLink>
                             </div>
+                            <div className="maps">
+                        <NavLink
+                        className={({ isActive }) => `nav-link ${isActive ? 'active': ''}`}
+                        to="/maps">
+                        Maps
+                        </NavLink>
+                        </div>
     
                             {/*<div className="photos">
                             <NavLink

@@ -1,6 +1,6 @@
 const FormControl = ({ children, text, htmlFor, error}) => {
     return (
-        <div className="FormControl mb-3">
+        <div className="FormControl">
             <label htmlFor={htmlFor} className="form-label">{text}</label>
             {children}
             <div className="invalid-feedback">

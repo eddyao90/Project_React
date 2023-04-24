@@ -3,6 +3,8 @@ import AuthContext from "../../contexts/AuthContext";
 import { Link, NavLink } from 'react-router-dom';
 import './Home.css';
 import Follow from "../../components/Follow/Follow";
+import FortuneCookie from "../../components/Fortune/Fortune";
+import Weather from "../../components/Weather/Weather";
 
 const Home= () => {
     const {currentUser} = useContext(AuthContext)
@@ -39,6 +41,13 @@ const Home= () => {
                         </NavLink>
                         </div>
 
+                        <div className="map-sidebar">
+                        <NavLink
+                        className={({ isActive }) => `nav-link ${isActive ? 'active': ''}`}
+                        to={`/maps`}>
+                        Map
+                        </NavLink>
+                        </div>
                         {/*<div className="photos">
                         <NavLink
                         className={({ isActive }) => `nav-link ${isActive ? 'active': ''}`}
@@ -55,10 +64,9 @@ const Home= () => {
                 <div className="main-middle">
                     <section className="welcome-home">
                         <h2 className="welcome-tag"><b>Welcome</b>, {currentUser.firstName}</h2>
+                        <FortuneCookie />
 
-                        <p><span>Today´s inspiration:</span> Api result</p>
-
-                        <div className="count-infos">
+                        <div className="count-infos-home">
                             {/* <div className="photos-home">
                                 <p>Photos</p>
                                 <div className="img">
@@ -76,6 +84,12 @@ const Home= () => {
                             <div className="countires-home">
                                 <p className="tag-country-city">Countries</p>
                                 <div className="img">
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                        <path fill="none" d="M0 0h24v24H0z" />
+                                        <path d="M12 18.26l-7.053 3.948 1.575-7.928L.587 8.792l8.027-.952L12 .5l3.386 7.34 8.027.952-5.935 5.488 1.575 7.928L12 18.26zm0-2.292l4.247 2.377-.949-4.773 3.573-3.305-4.833-.573L12 5.275l-2.038 4.42-4.833.572 3.573 3.305-.949 4.773L12 15.968z" />
+                                    </svg>
+
                                     <p>{currentUser.countries}</p>
                                 </div>
 
@@ -85,18 +99,26 @@ const Home= () => {
                                 <p className="tag-country-city">Cities</p>
 
                                 <div className="img">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                        <path fill="none" d="M0 0h24v24H0z" />
+                                        <path d="M12 18.26l-7.053 3.948 1.575-7.928L.587 8.792l8.027-.952L12 .5l3.386 7.34 8.027.952-5.935 5.488 1.575 7.928L12 18.26zm0-2.292l4.247 2.377-.949-4.773 3.573-3.305-4.833-.573L12 5.275l-2.038 4.42-4.833.572 3.573 3.305-.949 4.773L12 15.968z" />
+                                    </svg>
+
                                     <p>{currentUser.cities}</p>
                                 </div>
 
                             </div>
                         </div>
+                        <div className="main-middle">
+                        <Weather />
+                    </div>
                     </section>
 
-                    <div className="main-middle">
-                        {/* <h2>Upcoming trips: </h2> */}
-                    </div>
+ 
                 </div>
                 <Follow />
+
+
             </main>
         </div>
     </>

@@ -21,21 +21,17 @@ const Navbar = () => {
       {
         currentUser && 
         <nav className="navbar">
-          <div className="container">
-            <div className="logo">
-            </div>
+          <div className="navbar-top">
+
             <div className="menu-icon" onClick={handleShowNavbar}>
-              <svg viewBox="0 0 100 80" width="40" height="40">
-          <rect width="100" height="20"></rect>
-          <rect y="30" width="100" height="20"></rect>
-          <rect y="60" width="100" height="20"></rect>
-          </svg>
+
             </div>
               <div className={`nav-elements  ${showNavbar && 'active'}`}>
-              <ul>
+              <NavLink className='logo-nav' id='logo' to="/home" style={{ textDecoration: 'none' }}>Wanderluster</NavLink>
+              <ul className='ul-navbar'>
               <li className="nav-item">
               <NavLink
-                    className={({ isActive }) => `nav-link ${isActive ? 'active': ''}`}
+                    className={({ isActive }) => `nav-link ${isActive ? 'active': ''} custom-class`}
                     to="/home"
                   >
                     Home
@@ -43,7 +39,7 @@ const Navbar = () => {
             </li>
               <li className="nav-item">
               <NavLink
-                    className={({ isActive }) => `nav-link ${isActive ? 'active': ''}`}
+                    className={({ isActive }) => `nav-link ${isActive ? 'active': ''} custom-class`}
                     to={`/profile/${currentUser.id}`}
                   >
                     Profile
@@ -51,28 +47,28 @@ const Navbar = () => {
                   </li>
                   <li className="nav-item">
               <NavLink
-                    className={({ isActive }) => `nav-link ${isActive ? 'active': ''}`}
+                    className={({ isActive }) => `nav-link ${isActive ? 'active': ''} custom-class`}
                     to={`/scrapbook/${currentUser?.id}`}>
                     Scrapbook
                   </NavLink>
               </li>
               <li className="nav-item">
               <NavLink
-                    className={({ isActive }) => `nav-link ${isActive ? 'active': ''}`}
+                    className={({ isActive }) => `nav-link ${isActive ? 'active': ''} custom-class`}
                     to="/people">
                     People
                   </NavLink>
               </li>
               <li className="nav-item">
               <NavLink
-                    className={({ isActive }) => `nav-link ${isActive ? 'active': ''}`}
+                    className={({ isActive }) => `nav-link ${isActive ? 'active': ''} custom-class`}
                     to="/maps">
                     Maps
                   </NavLink>
               </li>
               <li className="nav-item">
               <NavLink
-                    className={({ isActive }) => `nav-link ${isActive ? 'active': ''}`}
+                    className={({ isActive }) => `nav-link ${isActive ? 'active': ''} custom-class`}
                     to="/" onClick={handleLogout}>
                     Logout
                   </NavLink>

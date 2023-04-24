@@ -25,7 +25,7 @@
     height: 9.4rem;
     border-radius: 7.8rem;
     display: flex;
-    margin-left: -23px;
+    margin-left: -14px;
     margin-right: 29px;
     margin-bottom: 9px;
   }
@@ -36,7 +36,7 @@
     align-items: start;
     height: 54.5rem;
     width: 42rem;;
-    margin-right: -39px;
+    margin-right: -147px;
     background: var(--bg-home-sections);
     border-radius: 0.8rem;
     justify-content: start;
@@ -79,7 +79,7 @@
   }
   
   .following-list {
-    size: 10px;
+    size: 120px;
   }
 
   .username-follow {
@@ -90,8 +90,10 @@
 
   .see-all {
     color: blue;
-    margin-left: 10px;
-  }
+    margin-top: -17px;
+    margin-left: 20px;
+    text-decoration:none;
+}
 
   a {
     font-size: 1.5rem;
@@ -101,6 +103,8 @@
     text-transform: capitalize;
   }
 
-  .seeall {
-    text-decoration:none;
- }
+ .follow-side {
+  font-size: 29px;
+  margin-top: 11px;
+  margin-left: 10px;
+}

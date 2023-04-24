@@ -6,7 +6,8 @@ import AuthContext from "../../contexts/AuthContext";
 import { login as loginService } from "../../services/AuthService";
 import { setAccessToken } from "../../stores/AccessTokenStore";
 import { loginSchema } from "../../Schemas/LoginSchema";
-
+import "./Login.css"
+import { useNavigate } from 'react-router-dom';
 
 const initialValues = {
     email: '',
@@ -15,6 +16,7 @@ const initialValues = {
 
 export default function Login () {
  const { login } = useContext(AuthContext);
+ const navigate = useNavigate();
 
  const {
     values, errors, touched, handleChange, handleBlur, isSubmitting, handleSubmit, setSubmitting, setFieldError
@@ -39,9 +41,9 @@ export default function Login () {
     }
 });
 return (
-    <div>
+    <div className="Login-form">
 
-        <h1>Login</h1>
+        <h1 className="register-title">Login</h1>
 
         <form onSubmit={handleSubmit}>
             <FormControl text="Email" error={touched.email && errors.email} htmlFor="email">
@@ -72,9 +74,11 @@ return (
             <button className="btn-login" type="submit" disabled={isSubmitting}>
                 {isSubmitting
                 ? 'Submitting...'
-                : 'Submit'
+                : 'Login'
                 }
             </button>
+
+            <button className="btn-login" to="/" onClick={() => navigate(-1)}> Back</button>
             </form>
     </div>
 )

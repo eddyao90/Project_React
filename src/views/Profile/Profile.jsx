@@ -37,7 +37,7 @@ export default function Profile(){
                     <img src={profile?.image} alt='user image' />
                     </div>
                     <div className="info-bio">
-                        <h3>{profile?.firstName}</h3>
+                        <h3>{profile?.username}</h3>
 
                         <p>{profile?.level}</p>
                     </div>

@@ -5,6 +5,8 @@ import Input from "../../components/Input/Input";
 import RegisterSchema from "./../../Schemas/RegisterSchema";
 import { register } from "../../services/AuthService";
 import FormControl from "../../components/FormControl/FormControl";
+import "./Register.css";
+
 
 const INITIAL_VALUES = {
   firstName: "",
@@ -139,8 +141,10 @@ export default function Register() {
             className="button-register"
             disabled={isSubmitting}
           >
-            {isSubmitting ? "Loading" : "Submit"}
+            {isSubmitting ? "Loading" : "Register"}
           </button>
+          <button className="btn-login" to="/" onClick={() => navigate(-1)}> Back</button>
+           
         </form>
       </div>
     </div>

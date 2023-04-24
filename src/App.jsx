@@ -56,7 +56,7 @@ const App = () => {
           <Photos />
           </ProtectedRoute>
           } />
-          <Route path="all-follows" element={
+          <Route path="all-follows/:id" element={
           <ProtectedRoute>
           <FollowList />
           </ProtectedRoute>
